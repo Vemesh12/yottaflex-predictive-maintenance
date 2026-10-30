@@ -50,6 +50,14 @@ def state_event_id(n: int) -> str:
     return f"MSE-{n:07d}"
 
 
+def failure_id(n: int) -> str:
+    return f"FLR-{n:06d}"
+
+
+def status_event_id(n: int) -> str:
+    return f"WSE-{n:07d}"
+
+
 PATTERNS = {
     "plant_id": re.compile(r"^PLT-\d{3}$"),
     "line_id": re.compile(r"^LINE-PLT-\d{3}-\d{3}$"),
@@ -61,4 +69,6 @@ PATTERNS = {
     "technician_id": re.compile(r"^TECH-PLT-\d{3}-\d{3}$"),
     "part_id": re.compile(r"^PART-\d{4}$"),
     "state_event_id": re.compile(r"^MSE-\d{7}$"),
+    "failure_id": re.compile(r"^FLR-\d{6}$"),
+    "status_event_id": re.compile(r"^WSE-\d{7}$"),
 }

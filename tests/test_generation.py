@@ -21,7 +21,8 @@ SCALE = C.get_scale("starter")
 def _read(out):
     tables = {name: pd.read_csv(out / f"{name}.csv") for name in [
         "plants", "production_lines", "machines", "sensors", "operating_shifts", "technicians",
-        "parts", "machine_state_history"]}
+        "parts", "machine_state_history", "failure_events", "maintenance_work_orders",
+        "work_order_parts", "work_order_technicians", "work_order_status_history"]}
     tables["telemetry"] = pq.read_table(out / "telemetry").to_pandas()
     return tables
 
@@ -56,6 +57,8 @@ def test_full_scale_meets_required_volume():
     ("plants", "plant_id"), ("production_lines", "line_id"), ("machines", "machine_id"),
     ("sensors", "sensor_id"), ("operating_shifts", "shift_id"), ("technicians", "technician_id"),
     ("parts", "part_id"), ("machine_state_history", "state_event_id"), ("telemetry", "telemetry_id"),
+    ("failure_events", "failure_id"), ("maintenance_work_orders", "work_order_id"),
+    ("work_order_status_history", "status_event_id"),
 ])
 def test_primary_keys_unique_and_well_formed(run, table, column):
     _, _, t = run
@@ -74,10 +77,20 @@ def test_primary_keys_unique_and_well_formed(run, table, column):
     ("machine_state_history", "shift_id", "operating_shifts", "shift_id"),
     ("telemetry", "sensor_id", "sensors", "sensor_id"),
     ("telemetry", "machine_id", "machines", "machine_id"),
+    ("machine_state_history", "work_order_id", "maintenance_work_orders", "work_order_id"),
+    ("failure_events", "machine_id", "machines", "machine_id"),
+    ("maintenance_work_orders", "machine_id", "machines", "machine_id"),
+    ("maintenance_work_orders", "failure_id", "failure_events", "failure_id"),
+    ("maintenance_work_orders", "sensor_id", "sensors", "sensor_id"),
+    ("work_order_parts", "work_order_id", "maintenance_work_orders", "work_order_id"),
+    ("work_order_parts", "part_id", "parts", "part_id"),
+    ("work_order_technicians", "work_order_id", "maintenance_work_orders", "work_order_id"),
+    ("work_order_technicians", "technician_id", "technicians", "technician_id"),
+    ("work_order_status_history", "work_order_id", "maintenance_work_orders", "work_order_id"),
 ])
 def test_foreign_keys_resolve(run, child, fk, parent, pk):
     _, _, t = run
-    assert set(t[child][fk]) <= set(t[parent][pk])
+    assert set(t[child][fk].dropna()) <= set(t[parent][pk])  # NULL = optional relationship
 
 
 def test_child_ids_embed_parent_ids(run):
@@ -128,6 +141,7 @@ def test_telemetry_follows_operating_state(run):
           ON s.machine_id = t.machine_id AND t.ts >= s.start_ts AND t.ts < s.end_ts
     """).df()
     assert len(df) == len(t["telemetry"])  # every reading falls in exactly one state segment
+    df = df.dropna(subset=["value"])  # sensor dropouts are stored as NULL (Day 2), never as 0
     assert df["value"].between(df["range_min"], df["range_max"]).all()
     rpm = df[df["sensor_type"] == "RPM"]
     assert (rpm.loc[rpm["state"] == "RUNNING", "value"] > 0).all()

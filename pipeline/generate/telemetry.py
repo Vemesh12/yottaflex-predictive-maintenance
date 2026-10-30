@@ -12,6 +12,11 @@ Physics-inspired (not physics-accurate) model, per 30-minute slot:
 
 So a genuine 0 RPM / 0 A only ever appears outside RUNNING, which is what lets the validator
 tell a real stop from a missing reading that was filled with 0 (Day 2 edge case).
+
+Day 2 overlays, both optional and both drawing no numbers from the machine's random stream:
+  drift   failure warning signs (failures.drift_profile): multiplies running values and adds
+          heat to the temperature target, growing towards the failure.
+  faults  sensor faults (faults.apply_fault), applied to that one sensor only.
 """
 from __future__ import annotations
 
@@ -24,6 +29,7 @@ import pyarrow as pa
 from .. import config as C
 from ..ids import TS_ID_FORMAT
 from ..rng import stream
+from .faults import apply_fault
 
 S = C.STATE_CODE
 DECIMALS = {"TEMP": 2, "VIB": 3, "PRES": 3, "RPM": 1, "CURR": 2}
@@ -52,7 +58,8 @@ class TimeGrid:
 
 
 def machine_telemetry(machine, sensors: pd.DataFrame, state: np.ndarray, grid: TimeGrid,
-                      plant_index: int, seed: int) -> pa.Table:
+                      plant_index: int, seed: int, drift: dict | None = None,
+                      faults: list[dict] | None = None) -> pa.Table:
     rng = stream(seed, "telemetry", machine.machine_id)
     n = grid.n
     running = state == S["RUNNING"]
@@ -80,6 +87,8 @@ def machine_telemetry(machine, sensors: pd.DataFrame, state: np.ndarray, grid: T
             rise = nom - C.AMBIENT_MEAN_C
             target = np.where(running, ambient + rise * rel,
                               np.where(idle, ambient + 0.25 * rise, ambient))
+            if drift is not None:
+                target = target + drift["add"]["TEMP"] * running  # extra heat while it works
             temp = np.empty(n)
             t = ambient[0]
             for i in range(n):
@@ -98,7 +107,13 @@ def machine_telemetry(machine, sensors: pd.DataFrame, state: np.ndarray, grid: T
         else:  # CURR
             value = np.where(running, nom * rel + noise, np.where(idle, 0.05 * nom + noise * 0.2, 0.0))
 
-        value = np.clip(value, sensor.range_min, sensor.range_max)
+        if drift is not None and stype != "TEMP":
+            value = np.where(running, value * drift["mult"][stype], value)
+        for fault in faults or ():
+            if fault["sensor_id"] == sensor.sensor_id:
+                value = apply_fault(value, fault, nom, seed)
+
+        value = np.clip(value, sensor.range_min, sensor.range_max)  # NaN (dropout) stays NaN
         columns[sensor.sensor_id] = (np.round(value, DECIMALS[stype]), sensor.unit)
 
     sensor_ids, tel_ids, values, units = [], [], [], []
@@ -114,6 +129,6 @@ def machine_telemetry(machine, sensors: pd.DataFrame, state: np.ndarray, grid: T
         "sensor_id": pa.array(sensor_ids, pa.string()),
         "machine_id": pa.array([machine.machine_id] * (n * k), pa.string()),
         "ts": pa.array(np.tile(grid.epoch_s, k), SCHEMA.field("ts").type),
-        "value": pa.array(np.concatenate(values), pa.float64()),
+        "value": pa.array(np.concatenate(values), pa.float64(), from_pandas=True),  # NaN -> NULL
         "unit": pa.array(units, pa.string()),
     }, schema=SCHEMA)

@@ -1,0 +1,42 @@
+[
+ {
+  "technician_id":"TECH-PLT-001-001",
+  "plant_id":"PLT-001",
+  "technician_name":"Arjun A.",
+  "specialization":"MECHANICAL",
+  "skill_level":1,
+  "hourly_rate_inr":450,
+  "hire_date":1638144000000,
+  "status":"ACTIVE"
+ },
+ {
+  "technician_id":"TECH-PLT-001-002",
+  "plant_id":"PLT-001",
+  "technician_name":"Priya A.",
+  "specialization":"ELECTRICAL",
+  "skill_level":2,
+  "hourly_rate_inr":650,
+  "hire_date":1518134400000,
+  "status":"ACTIVE"
+ },
+ {
+  "technician_id":"TECH-PLT-001-003",
+  "plant_id":"PLT-001",
+  "technician_name":"Ravi A.",
+  "specialization":"INSTRUMENTATION",
+  "skill_level":1,
+  "hourly_rate_inr":450,
+  "hire_date":1493078400000,
+  "status":"ACTIVE"
+ },
+ {
+  "technician_id":"TECH-PLT-001-004",
+  "plant_id":"PLT-001",
+  "technician_name":"Meena A.",
+  "specialization":"HYDRAULICS",
+  "skill_level":2,
+  "hourly_rate_inr":650,
+  "hire_date":1511740800000,
+  "status":"ACTIVE"
+ }
+]

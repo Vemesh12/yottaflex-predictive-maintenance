@@ -6,12 +6,13 @@
     "plants": 1,
     "lines_per_plant": 2,
     "machines": 10,
-    "days": 14,
+    "days": 30,
     "interval_min": 30,
     "technicians_per_plant": 4
   },
   "simulation_start": "2026-07-01T06:00:00+05:30",
   "source": "100% synthetic; no external data used",
+  "generator_command": "python -m pipeline generate --scale starter --seed 20261022",
   "files": {
     "plants.csv": {
       "rows": 1,
@@ -30,8 +31,8 @@
       "sha256": "f637e99cb7bd29f4a93a9d43d293d6f839ad07716e32fac359c33de4d530f5f6"
     },
     "operating_shifts.csv": {
-      "rows": 42,
-      "sha256": "c5324377b974f0988041e08f03954bfa7b94de6a3d6829377c0959f10b47535f"
+      "rows": 90,
+      "sha256": "3ee1cf2c54eb942b8c1b9080b8978e8f06a9648cd28a3e948f35efffedd17e4b"
     },
     "technicians.csv": {
       "rows": 4,
@@ -42,13 +43,128 @@
       "sha256": "b79460c7f6e444dfbf4d6ad761f90554a1985ec3915c7db65474bf50cdb180bb"
     },
     "machine_state_history.csv": {
-      "rows": 254,
-      "sha256": "e282c5ffbccbf7630305eaefd12e771bbb13660a1b85e7a93007da6945d33030"
+      "rows": 506,
+      "sha256": "52823b4e2d322ec00d58cef06ee73c76d76e6b5bd0ac48a22cf5eb37c7f5f66a"
+    },
+    "maintenance_work_orders.csv": {
+      "rows": 14,
+      "sha256": "28041681775511cd0b56fcfb31567b6f7c541b634671f8f488d1975846a5bc13"
+    },
+    "failure_events.csv": {
+      "rows": 2,
+      "sha256": "ff0428a5bf70c07e2b6a764bf0cf43f03ea78a2a958dec9e7ed2eec651a1b7f5"
+    },
+    "work_order_parts.csv": {
+      "rows": 16,
+      "sha256": "614216746b7b8771cfb88f105e6b6d89873ab42dac3789db300956cf88ffbf8a"
+    },
+    "work_order_technicians.csv": {
+      "rows": 14,
+      "sha256": "5dcc7e18fbeb9aea4bf953ded5421549354248d457bde0d2e858fde8f349c202"
+    },
+    "work_order_status_history.csv": {
+      "rows": 55,
+      "sha256": "a29cb15fe2ec02b6c9a4f1f6bbae4d0c1f402f7ac28ba69d131a382412338908"
     },
     "telemetry/PLT-001.parquet": {
-      "rows": 33600,
-      "sha256": "a01ec9113033aa220cb6b0f94040d9ac7806cda801e84ecacae6e86ce6b7b7f4"
+      "rows": 72000,
+      "sha256": "3f6d8409325b28fd449499a271d4e989772931600d202cedc940643a5e2d39ce"
+    },
+    "exceptions/telemetry_exceptions.csv": {
+      "rows": 112,
+      "sha256": "739acb0bdb9a66744bca6aa6a1812a0fd5d2e98020c0150e906ebff5b30265c2"
+    },
+    "exceptions/failure_event_exceptions.csv": {
+      "rows": 2,
+      "sha256": "6d8b9a741a6221d041386c87a5b493e2b206c341d5067cab8564b7ee44f1dd19"
+    },
+    "exceptions/work_order_exceptions.csv": {
+      "rows": 3,
+      "sha256": "f4e5bef750331e7d7dfab15d031a2fa4ddb1346063c4891f49691eae9638d30f"
+    },
+    "ground_truth/ground_truth.csv": {
+      "rows": 121,
+      "sha256": "fad93456481c03c97b2aa98bc3721f9f25a80b0f4e5f537544b62cd17827eecb"
+    },
+    "ground_truth/ground_truth.json": {
+      "rows": 121,
+      "sha256": "2246c656742a3f14af565deab342ac79a1b11d8e02a7cb7340f41f77f3baf5d1"
+    },
+    "export/json/plants.json": {
+      "rows": 1,
+      "sha256": "4b1199ca9928c936c03a5eaf57f85bc21278a9cf0623ed8053a8fba28b5be3e9"
+    },
+    "export/json/production_lines.json": {
+      "rows": 2,
+      "sha256": "4773584b9ee927aa7de5a1fb045b4bb08161c043e6df32978fa9d87f277c900a"
+    },
+    "export/json/machines.json": {
+      "rows": 10,
+      "sha256": "7c3123443d6c5b3c14d07df9686bdec4c95d5b0a6f0f8aee12c6da88a621224f"
+    },
+    "export/json/sensors.json": {
+      "rows": 50,
+      "sha256": "c6df3e29f6edf764dee59a6756ea15313dd54d072ffc7b9c4df2d3df1e17d645"
+    },
+    "export/json/operating_shifts.json": {
+      "rows": 90,
+      "sha256": "b405d32fe2841c6abe4d20b1473baa27cb5280fb7f7c9bbb5e8e386372539394"
+    },
+    "export/json/technicians.json": {
+      "rows": 4,
+      "sha256": "2b3611dd15b801bce6f24b84fde23a6aa04a631e4553d0fa4f275deb34fe313d"
+    },
+    "export/json/parts.json": {
+      "rows": 20,
+      "sha256": "0478b28dacbfd246135fa130d7e3620487dd87831a45890840383b366aa33127"
+    },
+    "export/json/machine_state_history.json": {
+      "rows": 506,
+      "sha256": "4fd243d9a6989b0e27a528f8e1bcbdc0f93885d820d32725810fe271c1eed12c"
+    },
+    "export/json/maintenance_work_orders.json": {
+      "rows": 14,
+      "sha256": "9d63b172dea0f6e000839e57122e203b47e96852da99dc754c60619bfd54abd2"
+    },
+    "export/json/failure_events.json": {
+      "rows": 2,
+      "sha256": "a79853684085da2822438fbf31ea2fe1404ad518991a01973edb8cb922ee223b"
+    },
+    "export/json/work_order_parts.json": {
+      "rows": 16,
+      "sha256": "d89d427aeb3c713ed2625df220c01242bedb4d4743a62f83b9784dcf54087f21"
+    },
+    "export/json/work_order_technicians.json": {
+      "rows": 14,
+      "sha256": "525edcf5106980107a59e62c25876653414ac0e7e889e4436c171c93c7fdf7ac"
+    },
+    "export/json/work_order_status_history.json": {
+      "rows": 55,
+      "sha256": "52e5e69d2e90384dd4c276a3ab8cc9288dd629f6fb8511c269fa809ef6f454a1"
+    },
+    "export/json/ground_truth.json": {
+      "rows": 121,
+      "sha256": "2246c656742a3f14af565deab342ac79a1b11d8e02a7cb7340f41f77f3baf5d1"
+    },
+    "export/json/telemetry_sample.json": {
+      "rows": 1000,
+      "sha256": "c7a20daa82c1c0f1336831f90135f1a02408eefd796704af6d51fc12d27986a9"
+    },
+    "export/sql/seed.sql": {
+      "rows": null,
+      "sha256": "fa774657b0a0e3c92401b2485adb13e6e2d51a80c350a2e9cca466b9e1a681e7"
     }
   },
-  "planned_preventive_maintenance_windows": 10
+  "summary": {
+    "telemetry_readings": 72000,
+    "failure_events": 2,
+    "sensor_faults": 2,
+    "work_orders": {
+      "CORRECTIVE": 2,
+      "PREVENTIVE": 10,
+      "SENSOR_REPLACEMENT": 2
+    },
+    "planned_preventive_maintenance_windows": 10,
+    "injected_anomaly_records": 117
+  }
 }

@@ -1,0 +1,12 @@
+[
+ {
+  "plant_id":"PLT-001",
+  "plant_name":"Hyderabad Plant",
+  "city":"Hyderabad",
+  "state":"Telangana",
+  "country":"India",
+  "timezone":"Asia\/Kolkata",
+  "commissioned_date":1367971200000,
+  "status":"ACTIVE"
+ }
+]

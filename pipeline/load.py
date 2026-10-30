@@ -18,6 +18,11 @@ LOAD_ORDER = [
     ("operating_shift", "operating_shifts.csv"),
     ("technician", "technicians.csv"),
     ("part", "parts.csv"),
+    ("failure_event", "failure_events.csv"),
+    ("maintenance_work_order", "maintenance_work_orders.csv"),
+    ("work_order_part", "work_order_parts.csv"),
+    ("work_order_technician", "work_order_technicians.csv"),
+    ("work_order_status_history", "work_order_status_history.csv"),
     ("machine_state_history", "machine_state_history.csv"),
 ]
 

@@ -1,0 +1,18 @@
+[
+ {
+  "line_id":"LINE-PLT-001-001",
+  "plant_id":"PLT-001",
+  "line_name":"Hyderabad Line 1",
+  "product_family":"Fluid handling",
+  "commissioned_date":1464048000000,
+  "status":"ACTIVE"
+ },
+ {
+  "line_id":"LINE-PLT-001-002",
+  "plant_id":"PLT-001",
+  "line_name":"Hyderabad Line 2",
+  "product_family":"Air systems",
+  "commissioned_date":1383264000000,
+  "status":"ACTIVE"
+ }
+]

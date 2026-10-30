@@ -20,7 +20,7 @@ from .. import config as C
 from ..rng import stream
 
 REASONS = ["PRODUCTION", "MICRO_STOP", "NON_PRODUCTION_SHIFT", "PLANNED_PLANT_SHUTDOWN",
-           "PREVENTIVE_MAINTENANCE"]
+           "PREVENTIVE_MAINTENANCE", "BREAKDOWN", "CORRECTIVE_REPAIR"]
 R = {r: i for i, r in enumerate(REASONS)}
 S = C.STATE_CODE
 
@@ -68,21 +68,31 @@ def plan_machine_states(machine, plant_shifts: pd.DataFrame, scale: C.Scale, see
             break
         start = d * slots_per_day
         end = min(start + int(rng.integers(8, 17)), n)  # 4-8 hours at 30-min slots
+        # Keep what the machine would have done, so a cancelled job can be undone (Day 2).
+        pm_windows.append({"machine_id": machine.machine_id, "start_slot": start, "end_slot": end,
+                           "maintenance_type": "PREVENTIVE",
+                           "prior_state": state[start:end].copy(),
+                           "prior_reason": reason[start:end].copy()})
         state[start:end] = S["MAINTENANCE"]
         reason[start:end] = R["PREVENTIVE_MAINTENANCE"]
-        pm_windows.append({"machine_id": machine.machine_id, "start_slot": start, "end_slot": end,
-                           "maintenance_type": "PREVENTIVE"})
         day += interval
 
     return state, reason, pm_windows
 
 
 def to_state_events(machine_id: str, state: np.ndarray, reason: np.ndarray,
-                    plant_shifts: pd.DataFrame, scale: C.Scale) -> list[dict]:
-    """Run-length encode the per-slot timeline into explicit state-change records."""
+                    plant_shifts: pd.DataFrame, scale: C.Scale,
+                    wo_ref: np.ndarray | None = None) -> list[dict]:
+    """Run-length encode the per-slot timeline into explicit state-change records.
+
+    wo_ref holds, per slot, the index of the machine's work item causing it (-1 = none). It is
+    written as a temporary key "<machine_id>#<index>" and swapped for the real WO ID later.
+    """
     slots_per_shift = 8 * 60 // scale.interval_min
     shift_ids = plant_shifts["shift_id"].to_numpy()
-    key = state.astype(np.int16) * 100 + reason
+    if wo_ref is None:
+        wo_ref = np.full(len(state), -1, dtype=np.int32)
+    key = (state.astype(np.int64) * 100 + reason) * 100_000 + (wo_ref + 1)
     change = np.flatnonzero(np.diff(key)) + 1
     starts = np.concatenate([[0], change])
     ends = np.concatenate([change, [len(state)]])
@@ -100,7 +110,7 @@ def to_state_events(machine_id: str, state: np.ndarray, reason: np.ndarray,
             "end_ts": C.SIM_START + timedelta(minutes=int(e) * scale.interval_min),
             "duration_min": int(e - s) * scale.interval_min,
             "shift_id": shift_ids[s // slots_per_shift],
-            "work_order_id": None,  # linked to preventive/corrective work orders on Day 2
+            "work_order_id": f"{machine_id}#{wo_ref[s]}" if wo_ref[s] >= 0 else None,
         })
         prev = st
     return rows

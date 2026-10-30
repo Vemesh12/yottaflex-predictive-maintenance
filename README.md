@@ -3,9 +3,9 @@
 Synthetic industrial data plus an explainable pipeline that uses telemetry, operating context and
 maintenance history to flag equipment at elevated failure risk.
 
-> **Status: work in progress (Day 1 of 3).** Master data, operating states, telemetry,
-> reproducibility and the DuckDB schema are done. Failures, maintenance work orders, edge cases,
-> validation, the risk engine and evaluation are next.
+> **Status: Day 2 of 3 complete.** Done: master data, operating states, telemetry, failures with
+> warning signs, maintenance work orders, sensor faults, the 5 bad-data scenarios, ground truth,
+> validation, CSV/JSON/SQL exports and reproducibility. Next: risk engine and evaluation metrics.
 
 ## Quick start
 
@@ -16,58 +16,86 @@ python -m venv .venv
 # Windows: .venv\Scripts\activate     macOS/Linux: source .venv/bin/activate
 pip install -r requirements.txt
 
-python -m pipeline generate --scale starter      # 10 machines, 14 days, ~1 second
-python -m pipeline generate --scale full         # 100 machines, 90 days, 2.16M readings, ~6 seconds
-python -m pipeline load --scale full             # load into DuckDB with PK/FK/CHECK constraints
-pytest                                           # 29 tests, ~4 seconds
+python -m pipeline generate --scale full     # ~11 s: 100 machines, 90 days, 2.16M readings
+python -m pipeline validate --scale full     # ~16 s: 83 checks + edge-case scoring, exits 1 on failure
+python -m pipeline load --scale full         # ~19 s: DuckDB with PK/FK/CHECK constraints
+pytest                                       # 60 tests, ~20 s
 ```
 
-Options: `--seed` (default `20261022`), `--out <folder>`, `--machines N`, `--days N`.
+Use `--scale starter` (10 machines, 30 days, ~1 s) for a quick try. Options: `--seed` (default
+`20261022`), `--out <folder>`, `--machines N`, `--days N`.
 
-## What gets generated
+## What gets generated (full scale, seed 20261022)
 
-| Entity | Full scale | File |
+| Data | Rows | File |
 |---|---:|---|
-| Plant | 3 | `data/<scale>/plants.csv` |
-| ProductionLine | 12 | `production_lines.csv` |
-| Machine | 100 | `machines.csv` |
-| Sensor | 500 | `sensors.csv` |
+| Plant / ProductionLine / Machine / Sensor | 3 / 12 / 100 / 500 | `plants.csv`, `production_lines.csv`, `machines.csv`, `sensors.csv` |
 | TelemetryEvent | 2,160,000 | `telemetry/<plant_id>.parquet` |
-| OperatingShift | 810 | `operating_shifts.csv` |
-| Technician | 18 | `technicians.csv` |
-| Part | 20 | `parts.csv` |
-| MachineStateHistory | 15,890 | `machine_state_history.csv` |
-| Manifest (row counts + SHA-256) | | `manifest.json` |
+| OperatingShift / Technician / Part | 810 / 18 / 20 | `operating_shifts.csv`, `technicians.csv`, `parts.csv` |
+| MachineStateHistory | 16,183 | `machine_state_history.csv` |
+| FailureEvent | 160 | `failure_events.csv` |
+| MaintenanceWorkOrder | 396 (160 corrective, 209 preventive incl. 21 cancelled, 27 sensor) | `maintenance_work_orders.csv` |
+| WorkOrderPart / WorkOrderTechnician (bridges) | 540 / 448 | `work_order_parts.csv`, `work_order_technicians.csv` |
+| WorkOrderStatusHistory | 1,563 | `work_order_status_history.csv` |
+| Bad-data scenarios (kept apart) | 118 | `exceptions/*.csv` |
+| Ground truth (kept apart) | 305 | `ground_truth/ground_truth.csv` and `.json` |
+| Exports | | `export/json/*.json`, `export/sql/seed.sql` |
+| Manifest: row counts + SHA-256 of every file | | `manifest.json` |
 
-`data/starter/` is committed as a small sample. `data/full/` is not committed; regenerate it with
-the command above.
+`data/starter/` is committed as a small sample. `data/full/` is not committed; regenerate it.
 
 ## How it works
 
 ```
-config (seed, scale) ──> master tables (plant → line → machine → sensor, shifts, technicians, parts)
-                     ──> per machine: shift calendar + micro-stops + preventive maintenance
-                           = operating-state timeline (stored as state-change events)
-                     ──> telemetry driven by state + load + ambient temperature
-                           (written machine by machine to Parquet)
-                     ──> CSV / Parquet + manifest.json ──> DuckDB (schema enforces every key)
+config (seed, scale)
+  └─> master tables: plant → line → machine → sensor, shifts, technicians, parts
+  └─> per machine:
+        shift calendar + micro-stops + preventive maintenance        (states.py)
+        failures from a hazard rule (age, wear since last service)   (failures.py)
+        sensor faults on single sensors                              (faults.py)
+        final state timeline → telemetry with pre-failure drift and sensor faults → Parquet
+  └─> work orders, parts, technicians, status history; costs and downtime derived  (maintenance.py)
+  └─> clean CSVs
+  └─> 5 bad-data scenarios → exceptions/ ;  labels → ground_truth/                 (anomalies.py)
+  └─> JSON + SQL exports, manifest
+validate: 83 rule checks on clean data, then on clean + exceptions; scored against ground truth
 ```
 
-- **Deterministic IDs** follow the required conventions: `PLT-001`, `LINE-PLT-001-001`,
-  `MCH-LINE-PLT-001-001-001`, `SNS-MCH-LINE-PLT-001-001-001-TEMP-01`, `TEL-<sensor-id>-<timestamp>`.
-- **Operating context drives telemetry:** RUNNING gives normal readings, IDLE gives low readings,
-  and SHUTDOWN/MAINTENANCE give readings that fall to ambient or zero. Temperature has thermal
-  inertia; current and vibration follow load.
-- **History is never overwritten:** every machine state change is a new `machine_state_history` row.
+- **Failures are rule-based, not random labels.** Daily hazard rises with machine age and time
+  since the last service. Before each failure, the mode's sensors drift for 3–10 days (e.g.
+  bearing wear: vibration up to ~2.6×), then the machine is FAILED, then repaired.
+- **Sensor faults are not machine faults:** they hit one sensor, don't change the machine's
+  state, and are fixed by a sensor-replacement work order with no downtime.
+- **History is never overwritten:** state changes and work-order status changes are rows.
+- **Derived values come from source records:** costs from parts and technician hours, downtime from
+  state history, severity from criticality and downtime, status from status history.
+- **Ground truth never reaches the data:** clean and exception files carry no label columns.
 
 ## Verifying it works
 
-- `pytest` checks volumes, ID formats, PK uniqueness, every FK, date ordering, contiguous state
-  history, telemetry-vs-state consistency, the shift calendar, and same-seed reproducibility.
-- `python -m pipeline load` loads everything into DuckDB, which rejects any row breaking a
-  PK/FK/CHECK constraint.
-- Reproducibility: generating the full dataset twice with seed `20261022` gives identical SHA-256
-  checksums for all 11 output files (compare the two `manifest.json` files).
+`python -m pipeline validate --scale full` writes `validation/validation_report.json` and
+`validation_summary.md`. Current result:
+
+- **Clean data:** 83 / 83 integrity checks pass (PKs, FKs, allowed values, date order, lifecycle
+  transitions, cost/downtime reconciliation, telemetry grid/units/ranges, duplicates).
+- **Edge cases:** all 118 injected records detected, 0 false positives, 0 missed:
+
+  | Scenario | Records | Detected |
+  |---|---:|---:|
+  | Telemetry from unknown sensor | 12 | 12 |
+  | Impossible value (outside sensor range) | 8 | 8 |
+  | Impossible unit | 2 | 2 |
+  | Failure before recorded symptom | 3 | 3 |
+  | Maintenance end before start | 3 | 3 |
+  | Sensor gap hidden as zero | 90 | 90 |
+
+- **Sensor faults** (data quality): STUCK 9/9 and DROPOUT 4/4 detected by single-sensor rules,
+  SPIKES 5/8 (short faults have too few spikes), BIAS 0/6 is not detectable from one sensor; this
+  is left for the risk engine.
+- A test corrupts a copy of the clean data in ways the ground truth doesn't know about and checks
+  that validation fails, so the results are computed rather than hardcoded.
+- **Reproducibility:** generating twice with the same seed gives identical SHA-256 for all 37 output
+  files (compare the two `manifest.json` files).
 
 ## Documentation
 

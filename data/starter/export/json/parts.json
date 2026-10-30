@@ -1,0 +1,182 @@
+[
+ {
+  "part_id":"PART-0001",
+  "part_name":"Pump bearing set",
+  "category":"BEARING",
+  "compatible_machine_type":"PUMP",
+  "unit_cost_inr":8500,
+  "lead_time_days":3,
+  "failure_mode_addressed":"BEARING_WEAR"
+ },
+ {
+  "part_id":"PART-0002",
+  "part_name":"Mechanical seal",
+  "category":"SEAL",
+  "compatible_machine_type":"PUMP",
+  "unit_cost_inr":12000,
+  "lead_time_days":5,
+  "failure_mode_addressed":"PRESSURE_LOSS"
+ },
+ {
+  "part_id":"PART-0003",
+  "part_name":"Impeller",
+  "category":"IMPELLER",
+  "compatible_machine_type":"PUMP",
+  "unit_cost_inr":26000,
+  "lead_time_days":10,
+  "failure_mode_addressed":"PRESSURE_LOSS"
+ },
+ {
+  "part_id":"PART-0004",
+  "part_name":"Compressor bearing set",
+  "category":"BEARING",
+  "compatible_machine_type":"COMPRESSOR",
+  "unit_cost_inr":15500,
+  "lead_time_days":4,
+  "failure_mode_addressed":"BEARING_WEAR"
+ },
+ {
+  "part_id":"PART-0005",
+  "part_name":"Compressor valve plate",
+  "category":"VALVE",
+  "compatible_machine_type":"COMPRESSOR",
+  "unit_cost_inr":18000,
+  "lead_time_days":7,
+  "failure_mode_addressed":"PRESSURE_LOSS"
+ },
+ {
+  "part_id":"PART-0006",
+  "part_name":"Oil cooler",
+  "category":"COOLING",
+  "compatible_machine_type":"COMPRESSOR",
+  "unit_cost_inr":32000,
+  "lead_time_days":12,
+  "failure_mode_addressed":"OVERHEATING"
+ },
+ {
+  "part_id":"PART-0007",
+  "part_name":"Hydraulic pump cartridge",
+  "category":"PUMP_CARTRIDGE",
+  "compatible_machine_type":"HYDRAULIC_PRESS",
+  "unit_cost_inr":45000,
+  "lead_time_days":14,
+  "failure_mode_addressed":"PRESSURE_LOSS"
+ },
+ {
+  "part_id":"PART-0008",
+  "part_name":"Hydraulic seal kit",
+  "category":"SEAL",
+  "compatible_machine_type":"HYDRAULIC_PRESS",
+  "unit_cost_inr":9500,
+  "lead_time_days":4,
+  "failure_mode_addressed":"PRESSURE_LOSS"
+ },
+ {
+  "part_id":"PART-0009",
+  "part_name":"Hydraulic oil filter",
+  "category":"FILTER",
+  "compatible_machine_type":"HYDRAULIC_PRESS",
+  "unit_cost_inr":2800,
+  "lead_time_days":2,
+  "failure_mode_addressed":"OVERHEATING"
+ },
+ {
+  "part_id":"PART-0010",
+  "part_name":"Spindle bearing set",
+  "category":"BEARING",
+  "compatible_machine_type":"CNC_SPINDLE",
+  "unit_cost_inr":38000,
+  "lead_time_days":10,
+  "failure_mode_addressed":"BEARING_WEAR"
+ },
+ {
+  "part_id":"PART-0011",
+  "part_name":"Spindle coolant pump",
+  "category":"COOLING",
+  "compatible_machine_type":"CNC_SPINDLE",
+  "unit_cost_inr":14500,
+  "lead_time_days":6,
+  "failure_mode_addressed":"OVERHEATING"
+ },
+ {
+  "part_id":"PART-0012",
+  "part_name":"Drive belt",
+  "category":"BELT",
+  "compatible_machine_type":"ALL",
+  "unit_cost_inr":1800,
+  "lead_time_days":1,
+  "failure_mode_addressed":"IMBALANCE"
+ },
+ {
+  "part_id":"PART-0013",
+  "part_name":"Coupling insert",
+  "category":"COUPLING",
+  "compatible_machine_type":"ALL",
+  "unit_cost_inr":2400,
+  "lead_time_days":2,
+  "failure_mode_addressed":"IMBALANCE"
+ },
+ {
+  "part_id":"PART-0014",
+  "part_name":"Motor winding rewind",
+  "category":"MOTOR",
+  "compatible_machine_type":"ALL",
+  "unit_cost_inr":22000,
+  "lead_time_days":7,
+  "failure_mode_addressed":"ELECTRICAL_FAULT"
+ },
+ {
+  "part_id":"PART-0015",
+  "part_name":"Motor contactor",
+  "category":"ELECTRICAL",
+  "compatible_machine_type":"ALL",
+  "unit_cost_inr":4200,
+  "lead_time_days":2,
+  "failure_mode_addressed":"ELECTRICAL_FAULT"
+ },
+ {
+  "part_id":"PART-0016",
+  "part_name":"Cooling fan",
+  "category":"COOLING",
+  "compatible_machine_type":"ALL",
+  "unit_cost_inr":3600,
+  "lead_time_days":2,
+  "failure_mode_addressed":"OVERHEATING"
+ },
+ {
+  "part_id":"PART-0017",
+  "part_name":"Temperature sensor (RTD)",
+  "category":"SENSOR",
+  "compatible_machine_type":"ALL",
+  "unit_cost_inr":3200,
+  "lead_time_days":2,
+  "failure_mode_addressed":"SENSOR_FAULT"
+ },
+ {
+  "part_id":"PART-0018",
+  "part_name":"Vibration sensor (accelerometer)",
+  "category":"SENSOR",
+  "compatible_machine_type":"ALL",
+  "unit_cost_inr":11500,
+  "lead_time_days":4,
+  "failure_mode_addressed":"SENSOR_FAULT"
+ },
+ {
+  "part_id":"PART-0019",
+  "part_name":"Pressure transmitter",
+  "category":"SENSOR",
+  "compatible_machine_type":"ALL",
+  "unit_cost_inr":7800,
+  "lead_time_days":3,
+  "failure_mode_addressed":"SENSOR_FAULT"
+ },
+ {
+  "part_id":"PART-0020",
+  "part_name":"Lubricant (5 L)",
+  "category":"CONSUMABLE",
+  "compatible_machine_type":"ALL",
+  "unit_cost_inr":1500,
+  "lead_time_days":1,
+  "failure_mode_addressed":"PREVENTIVE"
+ }
+]

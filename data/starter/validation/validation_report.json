@@ -1,0 +1,108 @@
+{
+  "dataset": "data/starter",
+  "passed": true,
+  "clean_baseline": {
+    "checks_run": 83,
+    "checks_passed": 83,
+    "unexpected_issues": []
+  },
+  "received_with_exceptions": {
+    "checks_run": 83,
+    "edge_case_detection": {
+      "FAILURE_BEFORE_SYMPTOM": {
+        "expected": 2,
+        "detected": 2,
+        "true_positive": 2,
+        "false_positive": 0,
+        "missed": 0
+      },
+      "IMPOSSIBLE_UNIT": {
+        "expected": 2,
+        "detected": 2,
+        "true_positive": 2,
+        "false_positive": 0,
+        "missed": 0
+      },
+      "IMPOSSIBLE_VALUE": {
+        "expected": 8,
+        "detected": 8,
+        "true_positive": 8,
+        "false_positive": 0,
+        "missed": 0
+      },
+      "MAINTENANCE_END_BEFORE_START": {
+        "expected": 3,
+        "detected": 3,
+        "true_positive": 3,
+        "false_positive": 0,
+        "missed": 0
+      },
+      "UNKNOWN_SENSOR": {
+        "expected": 12,
+        "detected": 12,
+        "true_positive": 12,
+        "false_positive": 0,
+        "missed": 0
+      },
+      "ZERO_FILLED_GAP": {
+        "expected": 90,
+        "detected": 90,
+        "true_positive": 90,
+        "false_positive": 0,
+        "missed": 0
+      }
+    },
+    "secondary_findings": [
+      {
+        "name": "reconcile:technician_hours_match_work_duration",
+        "violations": 3,
+        "all_on_injected_records": true
+      }
+    ],
+    "violations_by_check": {
+      "fk:telemetry.sensor_id->sensor": 12,
+      "telemetry:unit_matches_sensor": 2,
+      "telemetry:value_within_sensor_range": 8,
+      "telemetry:zero_while_running": 90,
+      "dates:maintenance_end_not_before_start": 3,
+      "dates:symptom_recorded_before_failure": 2,
+      "reconcile:technician_hours_match_work_duration": 3
+    }
+  },
+  "data_quality": {
+    "telemetry_readings": 72000,
+    "missing_readings": 26,
+    "completeness_pct": 99.964,
+    "sensor_fault_detection": {
+      "STUCK": {
+        "faults": 1,
+        "detected": 1,
+        "flagged_without_fault": 0
+      },
+      "SPIKES": {
+        "faults": 0,
+        "detected": 0,
+        "flagged_without_fault": 0
+      },
+      "BIAS": {
+        "faults": 0,
+        "detected": null,
+        "note": "not detectable from one sensor alone; needs cross-sensor model"
+      },
+      "DROPOUT": {
+        "faults": 1,
+        "detected": 1,
+        "flagged_without_fault": 0
+      }
+    }
+  },
+  "category_counts": {
+    "date_order": 9,
+    "enum": 17,
+    "foreign_key": 18,
+    "lifecycle": 8,
+    "primary_key": 14,
+    "reconciliation": 11,
+    "telemetry": 6
+  }
+}

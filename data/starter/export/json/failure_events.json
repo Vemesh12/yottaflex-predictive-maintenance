@@ -1,0 +1,20 @@
+[
+ {
+  "failure_id":"FLR-000001",
+  "machine_id":"MCH-LINE-PLT-001-001-002",
+  "failure_ts":"2026-07-18T10:00:00+05:30",
+  "failure_mode":"OVERHEATING",
+  "first_symptom_ts":"2026-07-14T22:00:00+05:30",
+  "severity":"MINOR",
+  "downtime_min":480
+ },
+ {
+  "failure_id":"FLR-000002",
+  "machine_id":"MCH-LINE-PLT-001-002-002",
+  "failure_ts":"2026-07-23T21:00:00+05:30",
+  "failure_mode":"IMBALANCE",
+  "first_symptom_ts":"2026-07-19T16:30:00+05:30",
+  "severity":"MAJOR",
+  "downtime_min":630
+ }
+]

@@ -1,0 +1,122 @@
+[
+ {
+  "machine_id":"MCH-LINE-PLT-001-001-001",
+  "line_id":"LINE-PLT-001-001",
+  "machine_name":"Pump 01",
+  "machine_type":"PUMP",
+  "manufacturer":"KSB",
+  "model":"KSB-556",
+  "install_date":1568505600000,
+  "criticality":"B",
+  "pm_interval_days":45,
+  "status":"ACTIVE"
+ },
+ {
+  "machine_id":"MCH-LINE-PLT-001-001-002",
+  "line_id":"LINE-PLT-001-001",
+  "machine_name":"Compressor 02",
+  "machine_type":"COMPRESSOR",
+  "manufacturer":"Atlas Copco",
+  "model":"ATL-785",
+  "install_date":1594252800000,
+  "criticality":"C",
+  "pm_interval_days":60,
+  "status":"ACTIVE"
+ },
+ {
+  "machine_id":"MCH-LINE-PLT-001-001-003",
+  "line_id":"LINE-PLT-001-001",
+  "machine_name":"Pump 03",
+  "machine_type":"PUMP",
+  "manufacturer":"Kirloskar",
+  "model":"KIR-868",
+  "install_date":1661126400000,
+  "criticality":"A",
+  "pm_interval_days":30,
+  "status":"ACTIVE"
+ },
+ {
+  "machine_id":"MCH-LINE-PLT-001-001-004",
+  "line_id":"LINE-PLT-001-001",
+  "machine_name":"Cnc Spindle 04",
+  "machine_type":"CNC_SPINDLE",
+  "manufacturer":"Haas",
+  "model":"HAA-647",
+  "install_date":1706486400000,
+  "criticality":"B",
+  "pm_interval_days":45,
+  "status":"ACTIVE"
+ },
+ {
+  "machine_id":"MCH-LINE-PLT-001-001-005",
+  "line_id":"LINE-PLT-001-001",
+  "machine_name":"Cnc Spindle 05",
+  "machine_type":"CNC_SPINDLE",
+  "manufacturer":"Fanuc",
+  "model":"FAN-258",
+  "install_date":1618185600000,
+  "criticality":"C",
+  "pm_interval_days":60,
+  "status":"ACTIVE"
+ },
+ {
+  "machine_id":"MCH-LINE-PLT-001-002-001",
+  "line_id":"LINE-PLT-001-002",
+  "machine_name":"Compressor 01",
+  "machine_type":"COMPRESSOR",
+  "manufacturer":"ELGi",
+  "model":"ELG-800",
+  "install_date":1383868800000,
+  "criticality":"C",
+  "pm_interval_days":60,
+  "status":"ACTIVE"
+ },
+ {
+  "machine_id":"MCH-LINE-PLT-001-002-002",
+  "line_id":"LINE-PLT-001-002",
+  "machine_name":"Compressor 02",
+  "machine_type":"COMPRESSOR",
+  "manufacturer":"Atlas Copco",
+  "model":"ATL-440",
+  "install_date":1387152000000,
+  "criticality":"C",
+  "pm_interval_days":60,
+  "status":"ACTIVE"
+ },
+ {
+  "machine_id":"MCH-LINE-PLT-001-002-003",
+  "line_id":"LINE-PLT-001-002",
+  "machine_name":"Cnc Spindle 03",
+  "machine_type":"CNC_SPINDLE",
+  "manufacturer":"Siemens",
+  "model":"SIE-709",
+  "install_date":1623024000000,
+  "criticality":"C",
+  "pm_interval_days":60,
+  "status":"ACTIVE"
+ },
+ {
+  "machine_id":"MCH-LINE-PLT-001-002-004",
+  "line_id":"LINE-PLT-001-002",
+  "machine_name":"Hydraulic Press 04",
+  "machine_type":"HYDRAULIC_PRESS",
+  "manufacturer":"Yuken",
+  "model":"YUK-230",
+  "install_date":1559347200000,
+  "criticality":"C",
+  "pm_interval_days":60,
+  "status":"ACTIVE"
+ },
+ {
+  "machine_id":"MCH-LINE-PLT-001-002-005",
+  "line_id":"LINE-PLT-001-002",
+  "machine_name":"Cnc Spindle 05",
+  "machine_type":"CNC_SPINDLE",
+  "manufacturer":"Siemens",
+  "model":"SIE-228",
+  "install_date":1667865600000,
+  "criticality":"A",
+  "pm_interval_days":30,
+  "status":"ACTIVE"
+ }
+]

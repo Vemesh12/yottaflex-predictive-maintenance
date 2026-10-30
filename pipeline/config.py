@@ -38,8 +38,9 @@ class Scale:
 
 
 SCALES = {
-    # Starter: same generator, small enough to run in a couple of seconds.
-    "starter": Scale("starter", plants=1, lines_per_plant=2, machines=10, days=14,
+    # Starter: same generator, small enough to run in a couple of seconds. 30 days so that
+    # failures (which need up to 10 days of warning signs before them) fit inside the window.
+    "starter": Scale("starter", plants=1, lines_per_plant=2, machines=10, days=30,
                      interval_min=30, technicians_per_plant=4),
     # Full: 3 plants, 12 lines, 100 machines, 500 sensors, 90 days @ 30 min = 2,160,000 readings.
     "full": Scale("full", plants=3, lines_per_plant=4, machines=100, days=90,
@@ -160,3 +161,77 @@ PARTS = [
 ]
 
 FAILURE_MODES = ["BEARING_WEAR", "OVERHEATING", "PRESSURE_LOSS", "IMBALANCE", "ELECTRICAL_FAULT"]
+
+# ---------------------------------------------------------------------------
+# Failures (Day 2). Failures come from a documented hazard rule, not random labels:
+#   daily hazard = BASE[type] * (1 + AGE_K * age_years) * (0.4 + wear^2)
+#   wear = days since last service / pm_interval_days   (service = PM or corrective repair)
+# A failure is only drawn on a day the machine runs, and only if its whole warning window and
+# repair fit inside the simulation without touching a preventive-maintenance window.
+# ---------------------------------------------------------------------------
+FAILURE_BASE_DAILY_HAZARD = {"PUMP": 0.036, "COMPRESSOR": 0.045, "HYDRAULIC_PRESS": 0.039,
+                             "CNC_SPINDLE": 0.031}
+AGE_HAZARD_PER_YEAR = 0.04
+MIN_DAYS_BETWEEN_FAILURE_EVENTS = 2  # after a repair, before the next warning window may start
+
+# Failure modes a machine type can have (only modes for which a compatible spare part exists).
+FAILURE_MODE_WEIGHTS = {
+    "PUMP": {"BEARING_WEAR": 0.30, "PRESSURE_LOSS": 0.30, "IMBALANCE": 0.15,
+             "OVERHEATING": 0.10, "ELECTRICAL_FAULT": 0.15},
+    "COMPRESSOR": {"BEARING_WEAR": 0.25, "OVERHEATING": 0.30, "PRESSURE_LOSS": 0.20,
+                   "IMBALANCE": 0.10, "ELECTRICAL_FAULT": 0.15},
+    "HYDRAULIC_PRESS": {"PRESSURE_LOSS": 0.45, "OVERHEATING": 0.25, "IMBALANCE": 0.10,
+                        "ELECTRICAL_FAULT": 0.20},
+    "CNC_SPINDLE": {"BEARING_WEAR": 0.40, "OVERHEATING": 0.25, "IMBALANCE": 0.20,
+                    "ELECTRICAL_FAULT": 0.15},
+}
+# Days of degradation (warning signs) before the failure: (min, max).
+SYMPTOM_DAYS = {"BEARING_WEAR": (5, 10), "OVERHEATING": (3, 7), "PRESSURE_LOSS": (4, 9),
+                "IMBALANCE": (4, 8), "ELECTRICAL_FAULT": (1, 3)}
+# Gradual modes must have a recorded symptom before the failure. Electrical faults can be
+# sudden, so a missing symptom is allowed for them ("where prohibited" in the brief).
+GRADUAL_MODES = {"BEARING_WEAR", "OVERHEATING", "PRESSURE_LOSS", "IMBALANCE"}
+# Telemetry signature at the moment of failure; grows as progress^2 over the warning window.
+#   ("mult", g): running value x (1 + g * p)      ("add", a): +a degC to the temperature target
+FAILURE_SIGNATURE = {
+    "BEARING_WEAR": {"VIB": ("mult", 1.6), "TEMP": ("add", 8.0)},
+    "OVERHEATING": {"TEMP": ("add", 25.0), "CURR": ("mult", 0.10)},
+    "PRESSURE_LOSS": {"PRES": ("mult", -0.30), "CURR": ("mult", 0.08), "VIB": ("mult", 0.15)},
+    "IMBALANCE": {"VIB": ("mult", 1.0), "RPM": ("mult", -0.01)},
+    "ELECTRICAL_FAULT": {"CURR": ("mult", 0.35), "TEMP": ("add", 10.0)},
+}
+# Time from failure until a technician starts the repair, by criticality, in 30-min slots.
+RESPONSE_SLOTS = {"A": (1, 2), "B": (2, 4), "C": (4, 8)}
+REPAIR_HOURS = {"BEARING_WEAR": (8, 16), "OVERHEATING": (4, 10), "PRESSURE_LOSS": (6, 14),
+                "IMBALANCE": (3, 8), "ELECTRICAL_FAULT": (6, 20)}
+# Severity is derived from the outcome, never drawn at random.
+SEVERITY_MAJOR_DOWNTIME_MIN = 600
+# A preventive job due within this many days after a corrective repair is cancelled
+# (the repair already covered it).
+PM_CANCEL_AFTER_REPAIR_DAYS = 3
+
+# ---------------------------------------------------------------------------
+# Sensor faults (Day 2): the sensor misbehaves, the machine is healthy.
+# ---------------------------------------------------------------------------
+SENSOR_FAULT_DAILY_HAZARD = 0.0015
+FAULT_SENSOR_TYPES = ["TEMP", "VIB", "PRES"]
+SENSOR_FAULT_TYPES = ["STUCK", "SPIKES", "BIAS", "DROPOUT"]
+SENSOR_FAULT_WEIGHTS = [0.30, 0.25, 0.20, 0.25]
+SENSOR_FAULT_SLOTS = (12, 144)  # 6 hours to 3 days, ends when the sensor is replaced
+SENSOR_BIAS = {"TEMP": 12.0, "VIB": 0.5, "PRES": 0.15}  # TEMP: +degC; VIB, PRES: + fraction of nominal
+SENSOR_PART = {"TEMP": "Temperature sensor (RTD)", "VIB": "Vibration sensor (accelerometer)",
+               "PRES": "Pressure transmitter"}
+
+# ---------------------------------------------------------------------------
+# Work orders (Day 2)
+# ---------------------------------------------------------------------------
+WO_TYPES = ["PREVENTIVE", "CORRECTIVE", "SENSOR_REPLACEMENT"]
+WO_STATUSES = ["OPEN", "ASSIGNED", "IN_PROGRESS", "COMPLETED", "CANCELLED"]
+WO_TRANSITIONS = {None: {"OPEN"}, "OPEN": {"ASSIGNED", "CANCELLED"},
+                  "ASSIGNED": {"IN_PROGRESS", "CANCELLED"}, "IN_PROGRESS": {"COMPLETED"},
+                  "COMPLETED": set(), "CANCELLED": set()}
+CORRECTIVE_PRIORITY = {"A": "EMERGENCY", "B": "HIGH", "C": "MEDIUM"}
+LEAD_SPECIALIZATION = {"BEARING_WEAR": "MECHANICAL", "OVERHEATING": "MECHANICAL",
+                       "PRESSURE_LOSS": "MECHANICAL", "IMBALANCE": "MECHANICAL",
+                       "ELECTRICAL_FAULT": "ELECTRICAL"}
+PM_LEAD_DAYS = 7  # preventive work orders are raised a week before they are due

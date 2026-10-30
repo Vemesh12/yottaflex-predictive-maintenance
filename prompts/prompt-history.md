@@ -21,6 +21,7 @@ terms forbid publishing it.
 | 6 | 2026-10-30 | Claude Code | Day 1 build | Implement Day 1 and document it |
 | 7 | 2026-10-30 | Claude Code | Scope | Frontend needed? Prompt-history format |
 | 8 | 2026-10-30 | Claude Code | Process | Prompt-history format |
+| 9 | 2026-10-30 | Claude Code | Day 2 build | Audit, plan and implement Day 2 |
 
 ---
 
@@ -94,4 +95,52 @@ explanations of the logic, and why things are needed.
 ```text
 No, change the prompts I gave you. Restructure the prompts themselves in the Markdown file,
 not the explanations.
+```
+
+### 9. Audit, plan and implement Day 2
+
+```text
+I have completed Day 1 of my industrial predictive maintenance data-generation project. Now I
+want to start Day 2.
+
+Before writing or changing any code, inspect my existing project thoroughly. Read the folder
+structure, README, documentation, generators, database schema, models, validation logic,
+configuration, and tests. Understand how the current system works and how its components connect.
+
+Do not assume anything about the implementation. Verify it from the actual code.
+
+After understanding the project:
+1. Summarize the existing architecture and data flow.
+2. Identify what is already implemented and what Day 2 still needs.
+3. Suggest the best implementation order based on my existing architecture.
+
+Day 2 requirements:
+- Generate 100–200 realistic machine failure events with gradual warning signs in telemetry.
+- Generate maintenance work orders, technicians, parts, downtime, and costs with proper
+  relationships and lifecycle history.
+- Simulate sensor faults separately from actual machine failures.
+- Add the five required deliberate bad-data scenarios: unknown sensor, impossible sensor value,
+  failure before symptom, maintenance end before start, and missing readings incorrectly
+  represented as zero.
+- Keep invalid scenarios separate from clean baseline data.
+- Generate a separate ground-truth dataset. Never expose ground-truth labels as model input
+  features.
+- Implement validation to detect the expected anomalies and report unexpected data-integrity
+  issues.
+- Export the required datasets in CSV, JSON, and SQL formats.
+- Add automated tests and update the documentation.
+
+Important:
+- Preserve the existing Day 1 implementation and all passing tests.
+- Follow the current project structure and coding conventions.
+- Reuse existing utilities and models instead of unnecessarily rebuilding them.
+- Keep generation deterministic using the existing seed.
+- Do not hardcode validation results just to make tests pass.
+- Do not start Day 3 or build a dashboard yet.
+
+Work incrementally. First show me your repository audit and implementation plan. After that,
+implement each part, run the tests, fix issues, and explain the changes.
+
+Also write detailed notes in the build notes about what you wrote, so that I can understand
+everything very clearly when I read it.
 ```

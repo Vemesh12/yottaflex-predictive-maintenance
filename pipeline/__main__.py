@@ -22,6 +22,10 @@ def main(argv=None) -> None:
     load.add_argument("--scale", choices=sorted(C.SCALES), default="starter")
     load.add_argument("--data", type=Path, help="data folder (default: data/<scale>)")
 
+    val = sub.add_parser("validate", help="run integrity checks and score edge-case detection")
+    val.add_argument("--scale", choices=sorted(C.SCALES), default="starter")
+    val.add_argument("--data", type=Path, help="data folder (default: data/<scale>)")
+
     args = parser.parse_args(argv)
     data_dir = getattr(args, "out", None) or getattr(args, "data", None) or Path("data") / args.scale
 
@@ -32,6 +36,10 @@ def main(argv=None) -> None:
     elif args.command == "load":
         from .load import load
         load(data_dir)
+    elif args.command == "validate":
+        from .validate import validate
+        if not validate(data_dir)["passed"]:
+            raise SystemExit(1)
 
 
 if __name__ == "__main__":

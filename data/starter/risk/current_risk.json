@@ -1,0 +1,112 @@
+[
+ {
+  "machine_id":"MCH-LINE-PLT-001-001-002",
+  "eval_day":30,
+  "eval_ts":"2026-07-31T06:00:00+05:30",
+  "risk_score":2.0,
+  "risk_level":"LOW",
+  "reasons":"1 failure(s) in last 30 days",
+  "recommended_action":"Normal monitoring",
+  "sensor_alerts":"",
+  "contributions":"{\"recent_failure\": 2}"
+ },
+ {
+  "machine_id":"MCH-LINE-PLT-001-002-002",
+  "eval_day":30,
+  "eval_ts":"2026-07-31T06:00:00+05:30",
+  "risk_score":2.0,
+  "risk_level":"LOW",
+  "reasons":"1 failure(s) in last 30 days",
+  "recommended_action":"Normal monitoring",
+  "sensor_alerts":"",
+  "contributions":"{\"recent_failure\": 2}"
+ },
+ {
+  "machine_id":"MCH-LINE-PLT-001-001-001",
+  "eval_day":30,
+  "eval_ts":"2026-07-31T06:00:00+05:30",
+  "risk_score":0.0,
+  "risk_level":"LOW",
+  "reasons":"",
+  "recommended_action":"Normal monitoring",
+  "sensor_alerts":"",
+  "contributions":"{}"
+ },
+ {
+  "machine_id":"MCH-LINE-PLT-001-001-003",
+  "eval_day":30,
+  "eval_ts":"2026-07-31T06:00:00+05:30",
+  "risk_score":0.0,
+  "risk_level":"LOW",
+  "reasons":"",
+  "recommended_action":"Normal monitoring",
+  "sensor_alerts":"",
+  "contributions":"{}"
+ },
+ {
+  "machine_id":"MCH-LINE-PLT-001-001-004",
+  "eval_day":30,
+  "eval_ts":"2026-07-31T06:00:00+05:30",
+  "risk_score":0.0,
+  "risk_level":"LOW",
+  "reasons":"",
+  "recommended_action":"Normal monitoring",
+  "sensor_alerts":"TEMP sensor STUCK: instrumentation check, readings ignored",
+  "contributions":"{}"
+ },
+ {
+  "machine_id":"MCH-LINE-PLT-001-001-005",
+  "eval_day":30,
+  "eval_ts":"2026-07-31T06:00:00+05:30",
+  "risk_score":0.0,
+  "risk_level":"LOW",
+  "reasons":"",
+  "recommended_action":"Normal monitoring",
+  "sensor_alerts":"",
+  "contributions":"{}"
+ },
+ {
+  "machine_id":"MCH-LINE-PLT-001-002-001",
+  "eval_day":30,
+  "eval_ts":"2026-07-31T06:00:00+05:30",
+  "risk_score":0.0,
+  "risk_level":"LOW",
+  "reasons":"",
+  "recommended_action":"Normal monitoring",
+  "sensor_alerts":"",
+  "contributions":"{}"
+ },
+ {
+  "machine_id":"MCH-LINE-PLT-001-002-003",
+  "eval_day":30,
+  "eval_ts":"2026-07-31T06:00:00+05:30",
+  "risk_score":0.0,
+  "risk_level":"LOW",
+  "reasons":"",
+  "recommended_action":"Normal monitoring",
+  "sensor_alerts":"",
+  "contributions":"{}"
+ },
+ {
+  "machine_id":"MCH-LINE-PLT-001-002-004",
+  "eval_day":30,
+  "eval_ts":"2026-07-31T06:00:00+05:30",
+  "risk_score":0.0,
+  "risk_level":"LOW",
+  "reasons":"",
+  "recommended_action":"Normal monitoring",
+  "sensor_alerts":"",
+  "contributions":"{}"
+ },
+ {
+  "machine_id":"MCH-LINE-PLT-001-002-005",
+  "eval_day":30,
+  "eval_ts":"2026-07-31T06:00:00+05:30",
+  "risk_score":0.0,
+  "risk_level":"LOW",
+  "reasons":"",
+  "recommended_action":"Normal monitoring",
+  "sensor_alerts":"",
+  "contributions":"{}"
+ }
+]

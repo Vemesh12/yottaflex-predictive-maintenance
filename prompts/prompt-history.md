@@ -22,6 +22,7 @@ terms forbid publishing it.
 | 7 | 2026-10-30 | Claude Code | Scope | Frontend needed? Prompt-history format |
 | 8 | 2026-10-30 | Claude Code | Process | Prompt-history format |
 | 9 | 2026-10-30 | Claude Code | Day 2 build | Audit, plan and implement Day 2 |
+| 10 | 2026-10-30 | Claude Code | Day 3 build | Risk engine and evaluation |
 
 ---
 
@@ -143,4 +144,35 @@ implement each part, run the tests, fix issues, and explain the changes.
 
 Also write detailed notes in the build notes about what you wrote, so that I can understand
 everything very clearly when I read it.
+```
+
+### 10. Risk engine and evaluation
+
+```text
+Now implement Day 3: Predictive Maintenance Risk Engine and Evaluation.
+
+First inspect the existing repository and understand the architecture, datasets, telemetry,
+failures, maintenance records, and validation system. Reuse the existing implementation instead
+of rebuilding it.
+
+Implement:
+1. Feature engineering using sensor trends, rolling averages, temperature, vibration, operating
+   hours, machine age, and maintenance history.
+2. An explainable risk engine that assigns each machine a score (0–100), risk level, reasons, and
+   recommended actions.
+3. Evaluation using precision, recall, F1-score, false-positive rate, confusion matrix, and failure
+   detection lead time.
+4. Chronological training, validation, and testing splits to prevent data leakage.
+5. Automated tests and documentation covering methodology, assumptions, results, and limitations.
+
+Important:
+- Never use future data or ground-truth labels as input features.
+- Keep the implementation reproducible.
+- Preserve all existing functionality and passing tests.
+- Do not hardcode evaluation results.
+- Follow the existing project structure.
+- No dashboard for now.
+
+First inspect the project and give me a short implementation plan. Then implement Day 3
+incrementally, run all tests, fix issues, and report the results.
 ```

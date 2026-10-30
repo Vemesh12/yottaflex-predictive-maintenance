@@ -3,9 +3,10 @@
 Synthetic industrial data plus an explainable pipeline that uses telemetry, operating context and
 maintenance history to flag equipment at elevated failure risk.
 
-> **Status: Day 2 of 3 complete.** Done: master data, operating states, telemetry, failures with
-> warning signs, maintenance work orders, sensor faults, the 5 bad-data scenarios, ground truth,
-> validation, CSV/JSON/SQL exports and reproducibility. Next: risk engine and evaluation metrics.
+**Headline result** (held-out test period, full scale): the risk engine warned before **39 of 49
+failures (80%)**, a median **70 hours** in advance, with precision 0.98 and a false-positive rate of
+0.14%. It beats a single-sensor-threshold baseline on F1 (0.56 vs 0.40). Electrical faults (1–3 days
+of warning) are not caught at daily resolution; see [limitations](docs/risk-engine.md#8-limitations-and-next-steps).
 
 ## Quick start
 
@@ -18,8 +19,10 @@ pip install -r requirements.txt
 
 python -m pipeline generate --scale full     # ~11 s: 100 machines, 90 days, 2.16M readings
 python -m pipeline validate --scale full     # ~16 s: 83 checks + edge-case scoring, exits 1 on failure
-python -m pipeline load --scale full         # ~19 s: DuckDB with PK/FK/CHECK constraints
-pytest                                       # 60 tests, ~20 s
+python -m pipeline score --scale full        # ~10 s: features + calibration + risk score per machine-day
+python -m pipeline evaluate --scale full     # ~2 s: chronological train/validation/test evaluation
+python -m pipeline load --scale full         # ~19 s: DuckDB with PK/FK/CHECK constraints (optional)
+pytest                                       # 71 tests, ~22 s
 ```
 
 Use `--scale starter` (10 machines, 30 days, ~1 s) for a quick try. Options: `--seed` (default
@@ -59,6 +62,9 @@ config (seed, scale)
   └─> 5 bad-data scenarios → exceptions/ ;  labels → ground_truth/                 (anomalies.py)
   └─> JSON + SQL exports, manifest
 validate: 83 rule checks on clean data, then on clean + exceptions; scored against ground truth
+score:    daily features (past data only) -> thresholds learned on days 1-29 -> score, level,
+          reasons, action, sensor alerts per machine-day                              (risk/)
+evaluate: labels from ground truth; alert level chosen on days 30-59; reported on days 60-89
 ```
 
 - **Failures are rule-based, not random labels.** Daily hazard rises with machine age and time
@@ -97,8 +103,38 @@ validate: 83 rule checks on clean data, then on clean + exceptions; scored again
 - **Reproducibility:** generating twice with the same seed gives identical SHA-256 for all 37 output
   files (compare the two `manifest.json` files).
 
+## Risk engine
+
+An explainable, rule-based score from 0 to 100 for every machine, every day at 06:00, built only
+from data that existed at that moment:
+
+- **Features:** 1-day level and 3-day trend of vibration, temperature, pressure and current
+  (compared with each sensor's nominal value), time and running hours since last service, overdue
+  maintenance, machine age, recent failures, and sensor-health flags.
+- **Score:** a sum of named contributions (up to 40 per sensor group, +10 when 2+ groups agree,
+  plus maintenance history). Levels: LOW / MEDIUM / HIGH / CRITICAL, each with reasons and a
+  recommended action, e.g. *"HIGH: Vibration +116% vs nominal; rising +91% vs previous week;
+  2 sensor groups abnormal → Schedule inspection within 24 hours: check bearings, alignment and
+  balance"*.
+- **Sensor faults** (stuck, dropout, spikes) give an instrumentation alert, not machine risk.
+- **Calibration:** "normal" thresholds come from the training period with robust statistics
+  (median + 3/5 × MAD), no labels needed.
+- **Evaluation:** chronological train/validation/test split with purging. The alert level is chosen
+  on validation; precision, recall, F1, FPR, confusion matrix and lead time are reported on test.
+
+| Test period | Precision | Recall | F1 | FPR | Failures warned | Median lead |
+|---|---:|---:|---:|---:|---:|---:|
+| Risk engine | 0.975 | 0.395 | 0.563 | 0.0014 | 39 / 49 | 70.5 h |
+| Baseline: one sensor outside normal band | 0.916 | 0.253 | 0.396 | 0.0034 | 40 / 49 | |
+
+Tests prove there is no leakage. Corrupting all data after day 15 leaves day ≤ 15 features
+identical. Deleting ground truth doesn't affect scoring. Deleting test-period failures doesn't
+change the alert level chosen on validation. Full methodology, results and limitations:
+[docs/risk-engine.md](docs/risk-engine.md).
+
 ## Documentation
 
+- [Risk engine](docs/risk-engine.md): features, scoring, calibration, evaluation, results, limitations
 - [Data dictionary](docs/data-dictionary.md): every field, type, allowed values, units, keys and cardinality
 - [Assumptions and decisions](docs/assumptions.md)
 - [Prompt history](prompts/prompt-history.md): AI prompts used during development

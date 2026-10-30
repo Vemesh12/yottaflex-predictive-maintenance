@@ -1,0 +1,301 @@
+machine_id,eval_day,eval_ts,risk_score,risk_level,reasons,recommended_action,sensor_alerts,contributions
+MCH-LINE-PLT-001-001-001,1,2026-07-02T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-001,2,2026-07-03T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-001,3,2026-07-04T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-001,4,2026-07-05T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-001,5,2026-07-06T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-001,6,2026-07-07T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-001,7,2026-07-08T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-001,8,2026-07-09T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-001,9,2026-07-10T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-001,10,2026-07-11T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-001,11,2026-07-12T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-001,12,2026-07-13T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-001,13,2026-07-14T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-001,14,2026-07-15T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-001,15,2026-07-16T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-001,16,2026-07-17T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-001,17,2026-07-18T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-001,18,2026-07-19T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-001,19,2026-07-20T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-001,20,2026-07-21T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-001,21,2026-07-22T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-001,22,2026-07-23T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-001,23,2026-07-24T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-001,24,2026-07-25T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-001,25,2026-07-26T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-001,26,2026-07-27T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-001,27,2026-07-28T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-001,28,2026-07-29T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-001,29,2026-07-30T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-001,30,2026-07-31T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-002,1,2026-07-02T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-002,2,2026-07-03T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-002,3,2026-07-04T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-002,4,2026-07-05T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-002,5,2026-07-06T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-002,6,2026-07-07T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-002,7,2026-07-08T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-002,8,2026-07-09T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-002,9,2026-07-10T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-002,10,2026-07-11T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-002,11,2026-07-12T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-002,12,2026-07-13T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-002,13,2026-07-14T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-002,14,2026-07-15T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-002,15,2026-07-16T06:00:00+05:30,25.0,LOW,Temperature +9.3 degC vs nominal,Normal monitoring,,"{""temp_excess_c"": 25.0}"
+MCH-LINE-PLT-001-001-002,16,2026-07-17T06:00:00+05:30,33.0,MEDIUM,Temperature +9.3 degC vs nominal; Temperature rising +5.9 degC vs previous week,Monitor closely; inspect at next planned stop: check cooling and lubrication,,"{""temp_excess_c"": 25.0, ""temp_trend_c"": 8.0}"
+MCH-LINE-PLT-001-001-002,17,2026-07-18T06:00:00+05:30,40.0,MEDIUM,Temperature +9.3 degC vs nominal; Temperature rising +9.4 degC vs previous week,Monitor closely; inspect at next planned stop: check cooling and lubrication,,"{""temp_excess_c"": 25.0, ""temp_trend_c"": 15.0}"
+MCH-LINE-PLT-001-001-002,18,2026-07-19T06:00:00+05:30,2.0,LOW,1 failure(s) in last 30 days,Normal monitoring,,"{""recent_failure"": 2}"
+MCH-LINE-PLT-001-001-002,19,2026-07-20T06:00:00+05:30,2.0,LOW,1 failure(s) in last 30 days,Normal monitoring,,"{""recent_failure"": 2}"
+MCH-LINE-PLT-001-001-002,20,2026-07-21T06:00:00+05:30,2.0,LOW,1 failure(s) in last 30 days,Normal monitoring,,"{""recent_failure"": 2}"
+MCH-LINE-PLT-001-001-002,21,2026-07-22T06:00:00+05:30,2.0,LOW,1 failure(s) in last 30 days,Normal monitoring,,"{""recent_failure"": 2}"
+MCH-LINE-PLT-001-001-002,22,2026-07-23T06:00:00+05:30,2.0,LOW,1 failure(s) in last 30 days,Normal monitoring,,"{""recent_failure"": 2}"
+MCH-LINE-PLT-001-001-002,23,2026-07-24T06:00:00+05:30,2.0,LOW,1 failure(s) in last 30 days,Normal monitoring,,"{""recent_failure"": 2}"
+MCH-LINE-PLT-001-001-002,24,2026-07-25T06:00:00+05:30,2.0,LOW,1 failure(s) in last 30 days,Normal monitoring,,"{""recent_failure"": 2}"
+MCH-LINE-PLT-001-001-002,25,2026-07-26T06:00:00+05:30,2.0,LOW,1 failure(s) in last 30 days,Normal monitoring,,"{""recent_failure"": 2}"
+MCH-LINE-PLT-001-001-002,26,2026-07-27T06:00:00+05:30,2.0,LOW,1 failure(s) in last 30 days,Normal monitoring,,"{""recent_failure"": 2}"
+MCH-LINE-PLT-001-001-002,27,2026-07-28T06:00:00+05:30,2.0,LOW,1 failure(s) in last 30 days,Normal monitoring,,"{""recent_failure"": 2}"
+MCH-LINE-PLT-001-001-002,28,2026-07-29T06:00:00+05:30,2.0,LOW,1 failure(s) in last 30 days,Normal monitoring,,"{""recent_failure"": 2}"
+MCH-LINE-PLT-001-001-002,29,2026-07-30T06:00:00+05:30,2.0,LOW,1 failure(s) in last 30 days,Normal monitoring,,"{""recent_failure"": 2}"
+MCH-LINE-PLT-001-001-002,30,2026-07-31T06:00:00+05:30,2.0,LOW,1 failure(s) in last 30 days,Normal monitoring,,"{""recent_failure"": 2}"
+MCH-LINE-PLT-001-001-003,1,2026-07-02T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-003,2,2026-07-03T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-003,3,2026-07-04T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-003,4,2026-07-05T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-003,5,2026-07-06T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-003,6,2026-07-07T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-003,7,2026-07-08T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-003,8,2026-07-09T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-003,9,2026-07-10T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-003,10,2026-07-11T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-003,11,2026-07-12T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-003,12,2026-07-13T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-003,13,2026-07-14T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-003,14,2026-07-15T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-003,15,2026-07-16T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-003,16,2026-07-17T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-003,17,2026-07-18T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-003,18,2026-07-19T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-003,19,2026-07-20T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-003,20,2026-07-21T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-003,21,2026-07-22T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-003,22,2026-07-23T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-003,23,2026-07-24T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-003,24,2026-07-25T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-003,25,2026-07-26T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-003,26,2026-07-27T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-003,27,2026-07-28T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-003,28,2026-07-29T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-003,29,2026-07-30T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-003,30,2026-07-31T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-004,1,2026-07-02T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-004,2,2026-07-03T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-004,3,2026-07-04T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-004,4,2026-07-05T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-004,5,2026-07-06T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-004,6,2026-07-07T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-004,7,2026-07-08T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-004,8,2026-07-09T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-004,9,2026-07-10T06:00:00+05:30,16.2,LOW,Vibration +5% vs nominal,Normal monitoring,,"{""vib_excess"": 16.2}"
+MCH-LINE-PLT-001-001-004,10,2026-07-11T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-004,11,2026-07-12T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-004,12,2026-07-13T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-004,13,2026-07-14T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-004,14,2026-07-15T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-004,15,2026-07-16T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-004,16,2026-07-17T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-004,17,2026-07-18T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-004,18,2026-07-19T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-004,19,2026-07-20T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-004,20,2026-07-21T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-004,21,2026-07-22T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-004,22,2026-07-23T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-004,23,2026-07-24T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-004,24,2026-07-25T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-004,25,2026-07-26T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-004,26,2026-07-27T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-004,27,2026-07-28T06:00:00+05:30,0.0,LOW,,Normal monitoring,"TEMP sensor STUCK: instrumentation check, readings ignored",{}
+MCH-LINE-PLT-001-001-004,28,2026-07-29T06:00:00+05:30,0.0,LOW,,Normal monitoring,"TEMP sensor STUCK: instrumentation check, readings ignored",{}
+MCH-LINE-PLT-001-001-004,29,2026-07-30T06:00:00+05:30,0.0,LOW,,Normal monitoring,"TEMP sensor STUCK: instrumentation check, readings ignored",{}
+MCH-LINE-PLT-001-001-004,30,2026-07-31T06:00:00+05:30,0.0,LOW,,Normal monitoring,"TEMP sensor STUCK: instrumentation check, readings ignored",{}
+MCH-LINE-PLT-001-001-005,1,2026-07-02T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-005,2,2026-07-03T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-005,3,2026-07-04T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-005,4,2026-07-05T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-005,5,2026-07-06T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-005,6,2026-07-07T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-005,7,2026-07-08T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-005,8,2026-07-09T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-005,9,2026-07-10T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-005,10,2026-07-11T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-005,11,2026-07-12T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-005,12,2026-07-13T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-005,13,2026-07-14T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-005,14,2026-07-15T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-005,15,2026-07-16T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-005,16,2026-07-17T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-005,17,2026-07-18T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-005,18,2026-07-19T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-005,19,2026-07-20T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-005,20,2026-07-21T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-005,21,2026-07-22T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-005,22,2026-07-23T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-005,23,2026-07-24T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-005,24,2026-07-25T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-005,25,2026-07-26T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-005,26,2026-07-27T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-005,27,2026-07-28T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-005,28,2026-07-29T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-005,29,2026-07-30T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-005,30,2026-07-31T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-001,1,2026-07-02T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-001,2,2026-07-03T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-001,3,2026-07-04T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-001,4,2026-07-05T06:00:00+05:30,16.1,LOW,Temperature +5.8 degC vs nominal,Normal monitoring,,"{""temp_excess_c"": 16.1}"
+MCH-LINE-PLT-001-002-001,5,2026-07-06T06:00:00+05:30,16.1,LOW,Temperature +5.8 degC vs nominal,Normal monitoring,,"{""temp_excess_c"": 16.1}"
+MCH-LINE-PLT-001-002-001,6,2026-07-07T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-001,7,2026-07-08T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-001,8,2026-07-09T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-001,9,2026-07-10T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-001,10,2026-07-11T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-001,11,2026-07-12T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-001,12,2026-07-13T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-001,13,2026-07-14T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-001,14,2026-07-15T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-001,15,2026-07-16T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-001,16,2026-07-17T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-001,17,2026-07-18T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-001,18,2026-07-19T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-001,19,2026-07-20T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-001,20,2026-07-21T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-001,21,2026-07-22T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-001,22,2026-07-23T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-001,23,2026-07-24T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-001,24,2026-07-25T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-001,25,2026-07-26T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-001,26,2026-07-27T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-001,27,2026-07-28T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-001,28,2026-07-29T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-001,29,2026-07-30T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-001,30,2026-07-31T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-002,1,2026-07-02T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-002,2,2026-07-03T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-002,3,2026-07-04T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-002,4,2026-07-05T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-002,5,2026-07-06T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-002,6,2026-07-07T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-002,7,2026-07-08T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-002,8,2026-07-09T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-002,9,2026-07-10T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-002,10,2026-07-11T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-002,11,2026-07-12T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-002,12,2026-07-13T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-002,13,2026-07-14T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-002,14,2026-07-15T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-002,15,2026-07-16T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-002,16,2026-07-17T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-002,17,2026-07-18T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-002,18,2026-07-19T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-002,19,2026-07-20T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-002,20,2026-07-21T06:00:00+05:30,40.0,MEDIUM,Vibration +25% vs nominal; Vibration rising +12% vs previous week,"Monitor closely; inspect at next planned stop: check bearings, alignment and balance",,"{""vib_excess"": 25.0, ""vib_trend"": 15.0}"
+MCH-LINE-PLT-001-002-002,21,2026-07-22T06:00:00+05:30,40.0,MEDIUM,Vibration +42% vs nominal; Vibration rising +32% vs previous week,"Monitor closely; inspect at next planned stop: check bearings, alignment and balance",,"{""vib_excess"": 25.0, ""vib_trend"": 15.0}"
+MCH-LINE-PLT-001-002-002,22,2026-07-23T06:00:00+05:30,40.0,MEDIUM,Vibration +69% vs nominal; Vibration rising +44% vs previous week,"Monitor closely; inspect at next planned stop: check bearings, alignment and balance",,"{""vib_excess"": 25.0, ""vib_trend"": 15.0}"
+MCH-LINE-PLT-001-002-002,23,2026-07-24T06:00:00+05:30,42.0,MEDIUM,Vibration +96% vs nominal; Vibration rising +61% vs previous week; 1 failure(s) in last 30 days,"Monitor closely; inspect at next planned stop: check bearings, alignment and balance",,"{""recent_failure"": 2, ""vib_excess"": 25.0, ""vib_trend"": 15.0}"
+MCH-LINE-PLT-001-002-002,24,2026-07-25T06:00:00+05:30,2.0,LOW,1 failure(s) in last 30 days,Normal monitoring,,"{""recent_failure"": 2}"
+MCH-LINE-PLT-001-002-002,25,2026-07-26T06:00:00+05:30,2.0,LOW,1 failure(s) in last 30 days,Normal monitoring,,"{""recent_failure"": 2}"
+MCH-LINE-PLT-001-002-002,26,2026-07-27T06:00:00+05:30,2.0,LOW,1 failure(s) in last 30 days,Normal monitoring,,"{""recent_failure"": 2}"
+MCH-LINE-PLT-001-002-002,27,2026-07-28T06:00:00+05:30,2.0,LOW,1 failure(s) in last 30 days,Normal monitoring,,"{""recent_failure"": 2}"
+MCH-LINE-PLT-001-002-002,28,2026-07-29T06:00:00+05:30,2.0,LOW,1 failure(s) in last 30 days,Normal monitoring,,"{""recent_failure"": 2}"
+MCH-LINE-PLT-001-002-002,29,2026-07-30T06:00:00+05:30,2.0,LOW,1 failure(s) in last 30 days,Normal monitoring,,"{""recent_failure"": 2}"
+MCH-LINE-PLT-001-002-002,30,2026-07-31T06:00:00+05:30,2.0,LOW,1 failure(s) in last 30 days,Normal monitoring,,"{""recent_failure"": 2}"
+MCH-LINE-PLT-001-002-003,1,2026-07-02T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-003,2,2026-07-03T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-003,3,2026-07-04T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-003,4,2026-07-05T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-003,5,2026-07-06T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-003,6,2026-07-07T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-003,7,2026-07-08T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-003,8,2026-07-09T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-003,9,2026-07-10T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-003,10,2026-07-11T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-003,11,2026-07-12T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-003,12,2026-07-13T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-003,13,2026-07-14T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-003,14,2026-07-15T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-003,15,2026-07-16T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-003,16,2026-07-17T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-003,17,2026-07-18T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-003,18,2026-07-19T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-003,19,2026-07-20T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-003,20,2026-07-21T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-003,21,2026-07-22T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-003,22,2026-07-23T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-003,23,2026-07-24T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-003,24,2026-07-25T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-003,25,2026-07-26T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-003,26,2026-07-27T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-003,27,2026-07-28T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-003,28,2026-07-29T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-003,29,2026-07-30T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-003,30,2026-07-31T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-004,1,2026-07-02T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-004,2,2026-07-03T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-004,3,2026-07-04T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-004,4,2026-07-05T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-004,5,2026-07-06T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-004,6,2026-07-07T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-004,7,2026-07-08T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-004,8,2026-07-09T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-004,9,2026-07-10T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-004,10,2026-07-11T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-004,11,2026-07-12T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-004,12,2026-07-13T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-004,13,2026-07-14T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-004,14,2026-07-15T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-004,15,2026-07-16T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-004,16,2026-07-17T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-004,17,2026-07-18T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-004,18,2026-07-19T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-004,19,2026-07-20T06:00:00+05:30,8.2,LOW,Pressure falling 1% vs previous week,Normal monitoring,,"{""pres_trend"": 8.2}"
+MCH-LINE-PLT-001-002-004,20,2026-07-21T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-004,21,2026-07-22T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-004,22,2026-07-23T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-004,23,2026-07-24T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-004,24,2026-07-25T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-004,25,2026-07-26T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-004,26,2026-07-27T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-004,27,2026-07-28T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-004,28,2026-07-29T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-004,29,2026-07-30T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-004,30,2026-07-31T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-005,1,2026-07-02T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-005,2,2026-07-03T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-005,3,2026-07-04T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-005,4,2026-07-05T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-005,5,2026-07-06T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-005,6,2026-07-07T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-005,7,2026-07-08T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-005,8,2026-07-09T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-005,9,2026-07-10T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-005,10,2026-07-11T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-005,11,2026-07-12T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-005,12,2026-07-13T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-005,13,2026-07-14T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-005,14,2026-07-15T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-005,15,2026-07-16T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-005,16,2026-07-17T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-005,17,2026-07-18T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-005,18,2026-07-19T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-005,19,2026-07-20T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-005,20,2026-07-21T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-005,21,2026-07-22T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-005,22,2026-07-23T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-005,23,2026-07-24T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-005,24,2026-07-25T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-005,25,2026-07-26T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-005,26,2026-07-27T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-005,27,2026-07-28T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-005,28,2026-07-29T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-005,29,2026-07-30T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-005,30,2026-07-31T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}

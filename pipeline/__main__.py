@@ -26,6 +26,12 @@ def main(argv=None) -> None:
     val.add_argument("--scale", choices=sorted(C.SCALES), default="starter")
     val.add_argument("--data", type=Path, help="data folder (default: data/<scale>)")
 
+    for name, text in [("score", "build features, calibrate on the training period, score every machine-day"),
+                       ("evaluate", "chronological evaluation of the risk scores against ground truth")]:
+        p = sub.add_parser(name, help=text)
+        p.add_argument("--scale", choices=sorted(C.SCALES), default="starter")
+        p.add_argument("--data", type=Path, help="data folder (default: data/<scale>)")
+
     args = parser.parse_args(argv)
     data_dir = getattr(args, "out", None) or getattr(args, "data", None) or Path("data") / args.scale
 
@@ -40,6 +46,12 @@ def main(argv=None) -> None:
         from .validate import validate
         if not validate(data_dir)["passed"]:
             raise SystemExit(1)
+    elif args.command == "score":
+        from .risk.engine import run
+        run(data_dir)
+    elif args.command == "evaluate":
+        from .risk.evaluate import evaluate
+        evaluate(data_dir)
 
 
 if __name__ == "__main__":

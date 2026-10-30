@@ -1,0 +1,11 @@
+machine_id,eval_day,eval_ts,risk_score,risk_level,reasons,recommended_action,sensor_alerts,contributions
+MCH-LINE-PLT-001-001-002,30,2026-07-31T06:00:00+05:30,2.0,LOW,1 failure(s) in last 30 days,Normal monitoring,,"{""recent_failure"": 2}"
+MCH-LINE-PLT-001-002-002,30,2026-07-31T06:00:00+05:30,2.0,LOW,1 failure(s) in last 30 days,Normal monitoring,,"{""recent_failure"": 2}"
+MCH-LINE-PLT-001-001-001,30,2026-07-31T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-003,30,2026-07-31T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-001-004,30,2026-07-31T06:00:00+05:30,0.0,LOW,,Normal monitoring,"TEMP sensor STUCK: instrumentation check, readings ignored",{}
+MCH-LINE-PLT-001-001-005,30,2026-07-31T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-001,30,2026-07-31T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-003,30,2026-07-31T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-004,30,2026-07-31T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}
+MCH-LINE-PLT-001-002-005,30,2026-07-31T06:00:00+05:30,0.0,LOW,,Normal monitoring,,{}

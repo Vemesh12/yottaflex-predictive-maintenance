@@ -1,0 +1,277 @@
+{
+  "label": "machine fails within 7 days after the evaluation time",
+  "evaluation_points": "one per machine per day at 06:00",
+  "splits": {
+    "train": {
+      "eval_days": [
+        1,
+        9
+      ]
+    },
+    "validation": {
+      "eval_days": [
+        10,
+        19
+      ]
+    },
+    "test": {
+      "eval_days": [
+        20,
+        29
+      ]
+    }
+  },
+  "alert_level_selection": {
+    "chosen": "CRITICAL",
+    "selected_on": "validation",
+    "validation_by_level": {
+      "MEDIUM": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 3,
+        "tn": 37,
+        "points": 40,
+        "precision": null,
+        "recall": 0.0,
+        "f1": 0.0,
+        "false_positive_rate": 0.0
+      },
+      "HIGH": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 3,
+        "tn": 37,
+        "points": 40,
+        "precision": null,
+        "recall": 0.0,
+        "f1": 0.0,
+        "false_positive_rate": 0.0
+      },
+      "CRITICAL": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 3,
+        "tn": 37,
+        "points": 40,
+        "precision": null,
+        "recall": 0.0,
+        "f1": 0.0,
+        "false_positive_rate": 0.0
+      }
+    }
+  },
+  "results": {
+    "train": {
+      "eval_days": [
+        1,
+        9
+      ],
+      "point_level": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 30,
+        "points": 30,
+        "precision": null,
+        "recall": null,
+        "f1": 0.0,
+        "false_positive_rate": 0.0
+      },
+      "failure_level": {
+        "failures": 0,
+        "detected": 0,
+        "event_recall": null,
+        "lead_time_hours": {
+          "mean": null,
+          "median": null,
+          "min": null,
+          "max": null
+        },
+        "by_failure_mode": {}
+      }
+    },
+    "validation": {
+      "eval_days": [
+        10,
+        19
+      ],
+      "point_level": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 3,
+        "tn": 37,
+        "points": 40,
+        "precision": null,
+        "recall": 0.0,
+        "f1": 0.0,
+        "false_positive_rate": 0.0
+      },
+      "failure_level": {
+        "failures": 1,
+        "detected": 0,
+        "event_recall": 0.0,
+        "lead_time_hours": {
+          "mean": null,
+          "median": null,
+          "min": null,
+          "max": null
+        },
+        "by_failure_mode": {
+          "OVERHEATING": {
+            "failures": 1,
+            "detected": 0,
+            "median_lead_hours": null
+          }
+        }
+      }
+    },
+    "test": {
+      "eval_days": [
+        20,
+        29
+      ],
+      "point_level": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 3,
+        "tn": 36,
+        "points": 39,
+        "precision": null,
+        "recall": 0.0,
+        "f1": 0.0,
+        "false_positive_rate": 0.0
+      },
+      "failure_level": {
+        "failures": 1,
+        "detected": 0,
+        "event_recall": 0.0,
+        "lead_time_hours": {
+          "mean": null,
+          "median": null,
+          "min": null,
+          "max": null
+        },
+        "by_failure_mode": {
+          "IMBALANCE": {
+            "failures": 1,
+            "detected": 0,
+            "median_lead_hours": null
+          }
+        }
+      }
+    }
+  },
+  "test_by_level": {
+    "MEDIUM": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "tn": 36,
+      "points": 39,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "false_positive_rate": 0.0
+    },
+    "HIGH": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 3,
+      "tn": 36,
+      "points": 39,
+      "precision": null,
+      "recall": 0.0,
+      "f1": 0.0,
+      "false_positive_rate": 0.0
+    },
+    "CRITICAL": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 3,
+      "tn": 36,
+      "points": 39,
+      "precision": null,
+      "recall": 0.0,
+      "f1": 0.0,
+      "false_positive_rate": 0.0
+    }
+  },
+  "baselines_on_test": {
+    "maintenance_overdue_only": {
+      "point_level": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 3,
+        "tn": 36,
+        "points": 39,
+        "precision": null,
+        "recall": 0.0,
+        "f1": 0.0,
+        "false_positive_rate": 0.0
+      },
+      "failure_level": {
+        "failures": 1,
+        "detected": 0,
+        "event_recall": 0.0,
+        "lead_time_hours": {
+          "mean": null,
+          "median": null,
+          "min": null,
+          "max": null
+        },
+        "by_failure_mode": {
+          "IMBALANCE": {
+            "failures": 1,
+            "detected": 0,
+            "median_lead_hours": null
+          }
+        }
+      }
+    },
+    "single_sensor_normal_band": {
+      "point_level": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 1,
+        "tn": 36,
+        "points": 39,
+        "precision": 1.0,
+        "recall": 0.6667,
+        "f1": 0.8,
+        "false_positive_rate": 0.0
+      },
+      "failure_level": {
+        "failures": 1,
+        "detected": 1,
+        "event_recall": 1.0,
+        "lead_time_hours": {
+          "mean": 39.0,
+          "median": 39.0,
+          "min": 39.0,
+          "max": 39.0
+        },
+        "by_failure_mode": {
+          "IMBALANCE": {
+            "failures": 1,
+            "detected": 1,
+            "median_lead_hours": 39.0
+          }
+        }
+      }
+    }
+  },
+  "sensor_fault_handling": {
+    "DROPOUT": {
+      "faults": 1,
+      "eval_points": 1,
+      "with_sensor_alert": 0,
+      "with_machine_alert": 0
+    },
+    "STUCK": {
+      "faults": 1,
+      "eval_points": 3,
+      "with_sensor_alert": 2,
+      "with_machine_alert": 0
+    }
+  }
+}

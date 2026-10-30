@@ -235,3 +235,45 @@ LEAD_SPECIALIZATION = {"BEARING_WEAR": "MECHANICAL", "OVERHEATING": "MECHANICAL"
                        "PRESSURE_LOSS": "MECHANICAL", "IMBALANCE": "MECHANICAL",
                        "ELECTRICAL_FAULT": "ELECTRICAL"}
 PM_LEAD_DAYS = 7  # preventive work orders are raised a week before they are due
+
+# ---------------------------------------------------------------------------
+# Risk engine and evaluation (Day 3)
+# ---------------------------------------------------------------------------
+# One evaluation per machine per day at 06:00 (shift A handover), using only data before it.
+RISK_HORIZON_DAYS = 7          # label: "fails within the next 7 days"
+TREND_RECENT_DAYS = 3          # recent window for trends
+TREND_BASELINE_DAYS = (4, 10)  # "previous week": days t-10 .. t-4
+# Normal ranges are learned from the training period: robust centre + k x robust spread.
+THRESHOLD_MODERATE_K = 3.0
+THRESHOLD_STRONG_K = 5.0
+# (feature, sensor group, max points, reason template). Points scale from 50% at the
+# moderate threshold to 100% at the strong one. Every sensor group can earn up to 40 points
+# (level 25 + trend 15), so one strongly abnormal group alone reaches MEDIUM, and a second
+# abnormal group (+ corroboration) pushes the machine to HIGH or CRITICAL.
+RISK_FEATURES = [
+    ("vib_excess", "VIB", 25, "Vibration {v:+.0%} vs nominal"),
+    ("vib_trend", "VIB", 15, "Vibration rising {v:+.0%} vs previous week"),
+    ("temp_excess_c", "TEMP", 25, "Temperature {v:+.1f} degC vs nominal"),
+    ("temp_trend_c", "TEMP", 15, "Temperature rising {v:+.1f} degC vs previous week"),
+    ("pres_drop", "PRES", 25, "Pressure {v:.0%} below nominal"),
+    ("pres_trend", "PRES", 15, "Pressure falling {v:.0%} vs previous week"),
+    ("curr_excess", "CURR", 25, "Motor current {v:+.0%} vs nominal"),
+    ("curr_trend", "CURR", 15, "Motor current rising {v:+.0%} vs previous week"),
+]
+RISK_CORROBORATION_POINTS = 10  # 2+ sensor groups abnormal at once: machine-wide, not one bad sensor
+RISK_OVERDUE_POINTS = 3         # preventive maintenance overdue
+RISK_RECENT_FAILURE_POINTS = 2  # failed in the last 30 days
+RISK_SCORE_CAP = 100            # sum of contributions, capped
+RISK_LEVELS = [(80, "CRITICAL"), (60, "HIGH"), (30, "MEDIUM"), (0, "LOW")]
+LEVEL_ACTION = {
+    "CRITICAL": "Stop at next safe point and inspect within 4 hours",
+    "HIGH": "Schedule inspection within 24 hours",
+    "MEDIUM": "Monitor closely; inspect at next planned stop",
+    "LOW": "Normal monitoring",
+}
+GROUP_ACTION = {
+    "VIB": "check bearings, alignment and balance",
+    "TEMP": "check cooling and lubrication",
+    "PRES": "check seals, valves and for leaks",
+    "CURR": "check motor windings and drive",
+}

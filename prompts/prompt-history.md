@@ -23,6 +23,9 @@ terms forbid publishing it.
 | 8 | 2026-10-30 | Claude Code | Process | Prompt-history format |
 | 9 | 2026-10-30 | Claude Code | Day 2 build | Audit, plan and implement Day 2 |
 | 10 | 2026-10-30 | Claude Code | Day 3 build | Risk engine and evaluation |
+| 11 | 2026-10-30 | Claude Code | Submission | AI usage disclosure; check assumptions and limitations |
+| 12 | 2026-10-30 | Claude Code | Submission | Consolidated limitations document |
+| 13 | 2026-10-30 | Claude Code | Submission | Review of my personal statement in AI_USAGE.md |
 
 ---
 
@@ -175,4 +178,51 @@ Important:
 
 First inspect the project and give me a short implementation plan. Then implement Day 3
 incrementally, run all tests, fix issues, and report the results.
+```
+
+### 11. AI usage disclosure; check assumptions and limitations
+
+```text
+Step 1: Create AI usage disclosure
+Create AI_USAGE.md in your repository.
+
+Include:
+- AI tools used.
+- What you used AI assistance for.
+- How you reviewed, tested and corrected generated code.
+- Where the exact prompts are documented.
+- A statement that you are responsible for the final implementation.
+Do not invent AI usage details. Be transparent.
+
+Tell me whether all the assumptions and limitations are documented or not.
+```
+
+### 12. Consolidated limitations document
+
+```text
+Quick (about 10 minutes): add a docs/limitations.md covering all of the above, and a short
+Limitations section in the README that links to it.
+
+Fix it.
+```
+
+### 13. Review of my personal statement in AI_USAGE.md
+
+```text
+I reviewed the generated code and the overall project flow to understand how each part works. I
+tested the implementation at different stages, checked the generated data, and fixed issues
+whenever the tests or validation identified problems.
+
+I also reviewed the risk scores and evaluation results to understand where the system performs
+well and where it has limitations. AI tools helped me with implementation ideas, debugging, code
+improvements, and documentation, but I took responsibility for reviewing and testing the final
+work.
+
+This project helped me understand how to build a complete data-generation and predictive
+maintenance workflow, from creating realistic industrial data to validating it and evaluating
+machine failure risks. I also learned the importance of reproducibility, data quality, avoiding
+data leakage, and documenting limitations honestly.
+
+This is my review. Is it OK, or is there anything I need to change? Tell me, or structure it
+properly.
 ```

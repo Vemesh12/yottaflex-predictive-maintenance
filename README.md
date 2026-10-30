@@ -132,9 +132,25 @@ identical. Deleting ground truth doesn't affect scoring. Deleting test-period fa
 change the alert level chosen on validation. Full methodology, results and limitations:
 [docs/risk-engine.md](docs/risk-engine.md).
 
+## Limitations
+
+The main ones (full list with impact and next steps: [docs/limitations.md](docs/limitations.md)):
+
+- **Synthetic data:** failure signatures are designed, not calibrated on real machines, so the results
+  prove the method, not field accuracy.
+- **Risk engine:** electrical faults (1–3 days of warning) are not caught at daily resolution (0/8);
+  a single sensor's calibration bias can look like real drift; the score is not a probability.
+- **Resources:** technicians can be double-booked (no availability model); sensors have no status
+  history (replacements are only work orders); spare-parts stock is not modelled.
+- **Maintenance history** starts at the beginning of the 90-day window, so the "maintenance
+  overdue" signal is weak.
+- **Sensor-fault detection** from one sensor misses short spike bursts (5/8) and calibration bias.
+
 ## Documentation
 
 - [Risk engine](docs/risk-engine.md): features, scoring, calibration, evaluation, results, limitations
+- [Limitations](docs/limitations.md): everything not done or only partly done, with next steps
+- [AI usage](AI_USAGE.md): tools, what they did, how the output was checked
 - [Data dictionary](docs/data-dictionary.md): every field, type, allowed values, units, keys and cardinality
 - [Assumptions and decisions](docs/assumptions.md)
 - [Prompt history](prompts/prompt-history.md): AI prompts used during development

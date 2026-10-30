@@ -1,0 +1,54 @@
+{
+  "generator_version": "0.1.0",
+  "seed": 20261022,
+  "scale": {
+    "name": "starter",
+    "plants": 1,
+    "lines_per_plant": 2,
+    "machines": 10,
+    "days": 14,
+    "interval_min": 30,
+    "technicians_per_plant": 4
+  },
+  "simulation_start": "2026-07-01T06:00:00+05:30",
+  "source": "100% synthetic; no external data used",
+  "files": {
+    "plants.csv": {
+      "rows": 1,
+      "sha256": "d6ff87b255ac2f7c7f1926ff404d20b28e7ba53667b0239c49ac24341b4379ec"
+    },
+    "production_lines.csv": {
+      "rows": 2,
+      "sha256": "5d7b144744a9ff52f4d7be14b73544e2929906a718ebe7fb54fda59dfe35514d"
+    },
+    "machines.csv": {
+      "rows": 10,
+      "sha256": "a78eff467c74d2583e9bf4a07ed227eeac68987a0ea0ff7731d782d747752981"
+    },
+    "sensors.csv": {
+      "rows": 50,
+      "sha256": "f637e99cb7bd29f4a93a9d43d293d6f839ad07716e32fac359c33de4d530f5f6"
+    },
+    "operating_shifts.csv": {
+      "rows": 42,
+      "sha256": "c5324377b974f0988041e08f03954bfa7b94de6a3d6829377c0959f10b47535f"
+    },
+    "technicians.csv": {
+      "rows": 4,
+      "sha256": "826c421ed51f0fbb3188bd28c16cd09fb3529cf038ccaf453c4ef87d6d2799b3"
+    },
+    "parts.csv": {
+      "rows": 20,
+      "sha256": "b79460c7f6e444dfbf4d6ad761f90554a1985ec3915c7db65474bf50cdb180bb"
+    },
+    "machine_state_history.csv": {
+      "rows": 254,
+      "sha256": "e282c5ffbccbf7630305eaefd12e771bbb13660a1b85e7a93007da6945d33030"
+    },
+    "telemetry/PLT-001.parquet": {
+      "rows": 33600,
+      "sha256": "a01ec9113033aa220cb6b0f94040d9ac7806cda801e84ecacae6e86ce6b7b7f4"
+    }
+  },
+  "planned_preventive_maintenance_windows": 10
+}

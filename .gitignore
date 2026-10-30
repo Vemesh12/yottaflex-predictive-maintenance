@@ -1,0 +1,23 @@
+# Confidential assessment material and private notes - never publish
+Coding Challenge Guidance.pdf
+PROJECT_BRIEF.md
+PROBLEM_STATEMENT.md
+BUILD_NOTES.md
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# Node
+node_modules/
+dist/
+
+# Env
+.env
+
+# Generated data: full scale is regenerated from the seed; starter sample is committed
+data/full/
+*.duckdb
+*.duckdb.wal

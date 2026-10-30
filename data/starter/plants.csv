@@ -1,0 +1,2 @@
+plant_id,plant_name,city,state,country,timezone,commissioned_date,status
+PLT-001,Hyderabad Plant,Hyderabad,Telangana,India,Asia/Kolkata,2013-05-08,ACTIVE

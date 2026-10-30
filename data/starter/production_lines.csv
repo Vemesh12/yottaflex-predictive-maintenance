@@ -1,0 +1,3 @@
+line_id,plant_id,line_name,product_family,commissioned_date,status
+LINE-PLT-001-001,PLT-001,Hyderabad Line 1,Fluid handling,2016-05-24,ACTIVE
+LINE-PLT-001-002,PLT-001,Hyderabad Line 2,Air systems,2013-11-01,ACTIVE
